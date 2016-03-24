@@ -1418,8 +1418,14 @@ $('#vtab-option a').tabs();
     $('#form').submit();
   }
   function updateProduct() {
-    $('#form').attr('action', '<?php echo html_entity_decode($update); ?>');
-    $('#form').submit();
+//    $('#form').attr('action', '<?php echo html_entity_decode($update); ?>');
+//    $('#form').submit();
+      //custom function without reload
+      $.ajax({
+          type: 'POST',
+          url: '<?php echo html_entity_decode($update); ?>',
+          data: $('#form').serialize(),
+      });
   }
   
 //--></script>

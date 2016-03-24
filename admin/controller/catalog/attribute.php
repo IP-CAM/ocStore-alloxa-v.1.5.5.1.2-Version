@@ -11,7 +11,7 @@ class ControllerCatalogAttribute extends Controller {
 		
     	$this->getList();
   	}
-              
+
   	public function insert() {
 		$this->language->load('catalog/attribute');
 	
@@ -40,7 +40,7 @@ class ControllerCatalogAttribute extends Controller {
 						
       		$this->redirect($this->url->link('catalog/attribute', 'token=' . $this->session->data['token'] . $url, 'SSL'));
 		}
-	
+
     	$this->getForm();
   	}
 
