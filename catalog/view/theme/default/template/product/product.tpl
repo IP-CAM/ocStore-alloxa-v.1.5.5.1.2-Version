@@ -26,7 +26,7 @@
     </div>
     <div style="clear:both;"></div>
   </div>
-    <?php if ($thumb || $images) { ?>
+    <?php if (($thumb || $images) && !$hide_image) { ?>
     <div class="left">
     
       <?php if ($thumb) { ?>

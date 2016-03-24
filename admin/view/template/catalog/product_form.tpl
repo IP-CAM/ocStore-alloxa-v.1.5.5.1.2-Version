@@ -738,7 +738,7 @@
             <?php } ?>
             <tfoot>
               <tr>
-                <td colspan="2"></td>
+                <td colspan="2"><input type="checkbox" name="hide_image"<?php if($hide_image){echo " checked ";} ?><label>Скрыть изображения</label></td>
                 <td class="left"><a onclick="addImage();" class="button"><?php echo $button_add_image; ?></a></td>
               </tr>
             </tfoot>
@@ -1381,6 +1381,9 @@ function addImage() {
   
   image_row++;
 }
+    function hide_image(){
+
+    }
 //--></script> 
 <script type="text/javascript" src="view/javascript/jquery/ui/jquery-ui-timepicker-addon.js"></script> 
 <script type="text/javascript"><!--
@@ -1429,10 +1432,14 @@ $('#vtab-option a').tabs();
 //    $('#form').attr('action', '<?php echo html_entity_decode($update); ?>');
 //    $('#form').submit();
       //custom function without reload
+      $('#update_message').remove();
       $.ajax({
           type: 'POST',
           url: '<?php echo html_entity_decode($update); ?>',
           data: $('#form').serialize(),
+          success: function(){
+              $('div.heading h1').append('<span id="update_message" style="color:green;"> Изменения были применены.</span>')
+          },
       });
   }
   

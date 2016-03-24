@@ -634,6 +634,7 @@ class ControllerCatalogProduct extends Controller {
 		);
 		
 		$this->load->model('tool/image');
+
 		
 		$product_total = $this->model_catalog_product->getTotalProducts($data);
 			
@@ -808,7 +809,7 @@ class ControllerCatalogProduct extends Controller {
 		$pagination = new Pagination();
 		$pagination->total = $product_total;
 		$pagination->page = $page;
-		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->limit = 5;//$this->config->get('config_admin_limit');
 		$pagination->text = $this->language->get('text_pagination');
 		$pagination->url = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 			
@@ -1171,7 +1172,8 @@ class ControllerCatalogProduct extends Controller {
 		}
 		
 		$this->load->model('tool/image');
-		
+		$this->data['hide_image'] = $product_info['hide_image'];
+
 		if (isset($this->request->post['image']) && file_exists(DIR_IMAGE . $this->request->post['image'])) {
 			$this->data['thumb'] = $this->model_tool_image->resize($this->request->post['image'], 100, 100);
 		} elseif (!empty($product_info) && $product_info['image'] && file_exists(DIR_IMAGE . $product_info['image'])) {
