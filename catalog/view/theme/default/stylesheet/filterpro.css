@@ -1,0 +1,147 @@
+#filterpro .option_box {
+    /*border: 1px solid #38B0E3;*/
+    border-radius: 7px;
+    display: inline-block;
+    /*margin: 5px;*/
+    min-width: 138px;
+    /*padding: 5px;*/
+    vertical-align: top;
+    width: auto;
+    padding: 0px 10px;
+    width: auto;
+    display: block;
+}
+
+#filterpro .price_limit {
+    border: 0;
+    color: #38B0E3;
+    font-weight: bold;
+    width: 100%;
+}
+
+#filterpro .ui-widget-header {
+    background: none repeat scroll 0 0 #38B0E3;
+    border: 0 none;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#filterpro select {
+    width: 126px;
+}
+
+#filterpro .ui-state-hover, #filterpro .ui-state-focus, #filterpro .ui-state-active {
+    border: 1px solid #38B0E3;
+    background: none repeat scroll 0 0 #d9f2fc;
+}
+
+#filterpro .price_slider {
+    padding: 5px;
+}
+
+#filterpro .price_slider  input {
+    width: 45px;
+}
+
+#filterpro .option_values {
+    padding-top: 5px;
+}
+
+#filterpro .option_name, #filterpro .attribute_group_name {
+    background: url("../image/filter-not.gif") no-repeat scroll left center transparent;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0px 0px 0px 19px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+#filterpro .attribute_group_name{
+    padding-left: 0;
+}
+
+#filterpro .hided {
+    background: url("../image/filter-active.gif") no-repeat scroll left center transparent;
+    cursor: pointer;
+}
+
+#filterpro_box .clear_filter {
+    border-bottom: 1px dashed;
+    text-decoration: none;
+    float: right;
+    font-size: 14px;
+    margin: 5px 10px;
+}
+
+#filterpro .collapsible{
+    /*max-height: 120px;
+    overflow-x: hidden;
+    overflow-y: auto;*/
+}
+#filterpro img {
+    cursor: pointer;
+    margin: 2px
+}
+
+#filterpro img.selected {
+    border: 2px solid;
+    margin: 0;
+}
+#column-left + #column-right + #content .product-grid > div.loadmask {
+    width: 100%;
+}
+
+#filterpro input {
+    margin: 4px 0px;
+}
+#filterpro table{
+     margin-bottom: 5px;
+}
+#filterpro .option_box label {
+    font-size: 14px;
+    color: #666;
+}
+#filterpro .option_box .number-filter {
+    font-size: 10px;
+    color: #999;
+}
+#filterpro .option_box .attribute_box {
+    padding: 5px 0px;
+}
+#filterpro .ui-slider-handle {
+    width: 0.9em;
+    height: 0.9em;
+}
+#filterpro #slider-range, #filterpro .ui-slider-range {
+    height: 10px;
+    margin-bottom: 10px;
+}
+#filterpro .price_slider_name {
+    padding: 0px;
+    background: none;
+}
+#filterpro .price_slider_box {
+    margin-top: 30px;
+}
+#filterpro #min_price, #filterpro #max_price {
+    border: 1px solid #DBDEE1;
+    background: none;
+    font-size: 13px;
+    color: #000;
+}
+#filterpro .price_slider_ok {
+    vertical-align: middle;
+    background: #f8931d;
+    border-color: #f8931d;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    width: 27px;
+    padding: 0px;
+    vertical-align: middle;
+}
+#filterpro .attribute_box td {
+    padding-left: 5px;
+    vertical-align: top;
+}

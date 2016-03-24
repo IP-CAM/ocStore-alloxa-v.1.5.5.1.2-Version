@@ -1,0 +1,205 @@
+.catalog-map .avatar{
+	display: block;
+	margin-bottom: 7px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.tops{
+	margin-top: -15px;
+	z-index: 10;
+	position: relative;
+}
+.tops-wrap{
+	  
+}
+
+#slider2 .slide a{
+	display: block;
+	height: 240px!important;
+	width: 980px;
+}
+.tops a.prev span, .tops a.next span{
+	display: none;	 
+}
+.tops .prev-box, .tops .next-box{
+	position: absolute;
+	z-index: 50;
+	height: 250px;
+	overflow: hidden;
+}
+.tops a.prev, .tops a.next{
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	background-color: #F68121;
+	border-radius: 15px;
+	margin-top: 105px;
+}
+.tops a.prev:hover, .tops a.next:hover{
+	background-color: #999999; 
+}
+.tops a.prev img, .tops a.next img{
+	position: absolute;
+	height: 21px;
+	width: 13px;
+	 
+	left: 50%;
+	top: 50%;
+}
+.tops a.prev img{
+ 
+	margin-top: -11px;
+	margin-left: -8px;
+ 
+}
+.tops a.next img{
+ 
+	margin-top: -11px;
+	margin-left: -6px;
+	 
+}
+.tops .prev-box{
+	left: 0px;
+	text-align: right;
+	width: 70px;
+	margin-left: -20px;
+}
+.tops .next-box{
+	right: 0px;
+	text-align: left;
+	width: 70px;
+	margin-right: -20px;
+}
+.tops a.prev{
+	left: 0px; 
+}
+.tops a.next{
+ right: 0px; 
+}
+ 
+.tops ul{
+	padding: 0px;
+	list-style-type: none;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	
+}
+.tops li{
+	width: 32.33%;
+	position: relative;
+	margin-right: 1%;
+	margin-bottom: 15px;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+	height: 250px;
+	z-index: 25;
+}
+.tops li img{
+	height: 250px;
+	text-align: center;
+	  
+	margin-right: auto;
+	margin-left: auto;
+}
+ 
+.tops li.last{
+	margin-right: 0px!important; 
+}
+.tops ul{
+	margin: 0px;
+	padding: 0px; 
+}
+
+.tops .title{
+	color: #FFFFFF;
+	font-size: 1.2em;
+	padding-left:10px;
+}
+.tops .title a{
+	color: #FFFFFF;
+	text-decoration: none;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+.tops .title a:hover{
+	color: #F68121;
+	border-bottom-color: #F68121; 
+}
+.tops .desc{
+	color: #CCCCCC;
+	font-size: 0.8em;
+	margin: 0px;
+	padding: 0px;
+}
+.tops .container{
+	position: absolute;
+	bottom:  0px;
+	width: 100%;
+	text-align: left;
+	left: 0px;
+	display: none;
+}
+.tops .wrapper{
+	padding: 10px;
+	background-image: url(../images/bg-black.png);
+	height: 65px;
+}  
+
+h2.stroke{
+	padding-bottom: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	margin-bottom: 15px;
+	padding-right: 10px;
+	padding-left: 10px;
+}  
+.topsale-container{
+	overflow: hidden;
+	position: relative;
+	height: 270px; 
+}
+span.right, span.left{
+ 
+	display: block;
+	cursor: pointer;
+	padding-top: 5px;
+	padding-right: 8px;
+	padding-bottom: 5px;
+	padding-left: 8px;
+	margin-top: 120px;
+}
+
+.topsale-container .switch-left {
+	float: left;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #e2e2e2;
+	height: 300px;
+	padding-right: 10px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.topsale-container .switch-right {
+	float: right;
+	width: 30px;
+	height: 200px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+ .nivoSlider, .nivo-imageLink, .nivo-imageLink img
+{
+height: 239px!important;
+}
+
+
+ .slideshow .slider{
+	height: 400px;
+}  
