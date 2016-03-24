@@ -1544,6 +1544,7 @@ class ControllerCatalogProduct extends Controller {
 			}
 			
 			$this->data['product_images'][] = array(
+				'original'	 => HTTP_CATALOG . 'image/cache/'. $image,
 				'image'      => $image,
 				'thumb'      => $this->model_tool_image->resize($image, 100, 100),
 				'sort_order' => $product_image['sort_order']
