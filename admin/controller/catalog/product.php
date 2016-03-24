@@ -634,6 +634,7 @@ class ControllerCatalogProduct extends Controller {
 		);
 		
 		$this->load->model('tool/image');
+
 		
 		$product_total = $this->model_catalog_product->getTotalProducts($data);
 			
@@ -808,7 +809,7 @@ class ControllerCatalogProduct extends Controller {
 		$pagination = new Pagination();
 		$pagination->total = $product_total;
 		$pagination->page = $page;
-		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->limit = 5;//$this->config->get('config_admin_limit');
 		$pagination->text = $this->language->get('text_pagination');
 		$pagination->url = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 			
@@ -925,7 +926,8 @@ class ControllerCatalogProduct extends Controller {
 		$this->data['entry_product_memory'] = $this->language->get('entry_product_memory');
 		$this->data['entry_short'] = $this->language->get('entry_short');
 		$this->data['entry_f_text'] = $this->language->get('entry_f_text');
-				
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
     	$this->data['button_save'] = $this->language->get('button_save');
     	$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_add_attribute'] = $this->language->get('button_add_attribute');
@@ -1170,7 +1172,8 @@ class ControllerCatalogProduct extends Controller {
 		}
 		
 		$this->load->model('tool/image');
-		
+		$this->data['hide_image'] = $product_info['hide_image'];
+
 		if (isset($this->request->post['image']) && file_exists(DIR_IMAGE . $this->request->post['image'])) {
 			$this->data['thumb'] = $this->model_tool_image->resize($this->request->post['image'], 100, 100);
 		} elseif (!empty($product_info) && $product_info['image'] && file_exists(DIR_IMAGE . $product_info['image'])) {
@@ -1543,6 +1546,7 @@ class ControllerCatalogProduct extends Controller {
 			}
 			
 			$this->data['product_images'][] = array(
+				'original'	 => HTTP_CATALOG . 'image/'. $image,
 				'image'      => $image,
 				'thumb'      => $this->model_tool_image->resize($image, 100, 100),
 				'sort_order' => $product_image['sort_order']

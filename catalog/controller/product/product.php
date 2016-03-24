@@ -306,8 +306,10 @@ class ControllerProductProduct extends Controller {
 			}
 			
 			$this->load->model('tool/image');
+			//----------------------------------------------------------------------------------------------------------
+			if (!$product_info['hide_image']){//Если картинку нужно отобразить — отображаем.
 
-			if ($product_info['image']) {
+				if ($product_info['image']) {
 				$this->data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height'));
 			} else {
 				$this->data['popup'] = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height'));
@@ -329,8 +331,13 @@ class ControllerProductProduct extends Controller {
 					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')),
 					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height'))
 				);
-			}	
-						
+			}
+
+			}//конец вывода если есть картинка
+			else{
+
+			}
+			//----------------------------------------------------------------------------------------------------------
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
 				$this->data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')));
 			} else {
@@ -422,6 +429,7 @@ class ControllerProductProduct extends Controller {
 			$this->data['delivery_text'] = html_entity_decode($this->config->get('config_delivery_text'));
 			$this->data['payment_text'] = html_entity_decode($this->config->get('config_payment_text'));
 			$this->data['guarantee_text'] = html_entity_decode($this->config->get('config_guarantee_text'));
+			$this->data['hide_image'] = $product_info['hide_image'];
 
 			if (!isset($this->session->data['compare'])) {
 				$this->session->data['compare'] = array();
