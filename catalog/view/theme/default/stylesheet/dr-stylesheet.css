@@ -1,0 +1,693 @@
+/* ------------------------------------------------------------------
+--  Copyright             :  2014
+--  Author                :  JOHN J YIN
+--	Email				  :	 john.yin@ebizdesigner.com
+--  Version               :  0.1
+--  Date                  :  14/03/2014
+--  Description           :  Styles of Opencart Default Responsive Theme
+--                         
+--  
+--                           
+--
+--  History               :  
+--     <author>   <time>      <version >       <desc>
+--		John	14/03/2014		0.1				initial
+--
+--------------------------------------------------------------------- */
+
+
+/*	-------------------------
+		global
+	-------------------------	*/
+
+body {
+	overflow: hidden;						/* content width=960px~980px, scroll-bar coming out*/
+	font-family: 'Droid Sans', arial, Helvetica, sans-serif;
+	background: url('../image/grid.png');	/* grid background */
+	line-height: 16px;
+}
+
+h1, h2, h3, h4, b {
+	font-weight: normal;
+}
+
+a, a:visited, a b {
+    color: #555;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover,
+a b:hover {
+    color: #00D0DD!important;			/* unified hover effect on link */
+	transition: all 0.5s ease 0s;		/* transition effect */
+	text-decoration: none;
+}
+
+h1, .welcome {
+	color: #636E75;
+	font: Verdana;
+	/*margin-top: 0px;*/
+	margin-bottom: 20px;
+	font-size: 32px;
+	font-weight: normal;
+	text-shadow: 0 0 1px rgba(0, 0, 0, .01);
+}
+
+a.button,
+input.button {
+	background: url("../image/grad.png") repeat-x scroll left top #F8F8F8;
+	border-radius: 3px;
+    color: #444444;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 12px;
+    text-shadow: 0 1px 0 #FFFFFF;
+	box-shadow: none;					/* remove default box shadow */
+}
+
+a.button:hover,
+input.button:hover {
+	background-color: #00D0DD;
+	color: #FFF;						/* conflict with unified a:hover */
+	text-shadow: none;
+	background-position: 0;
+}
+ 
+/* ------------------------------------
+	all table header 
+	- Account >> Transactions
+	- .compare-info (Product Comparision)
+ * ------------------------------------*/
+
+table thead td a,
+thead tr,
+thead td,
+.compare-info tr td:first-child 
+ {
+    color: #999;					/* replace default #222 */
+    font-weight: normal;			/* remove default bold */
+}
+
+
+
+/* */
+
+
+.box {
+	margin: 0px;
+}
+
+.box .box-heading {
+	font-size: 14px;
+	font-family: 'Pontano Sans',arial,sans-serif;
+	border: none;
+	background: url('../image/grid.png') repeat;	/* remove default background */
+	line-height: 120%;
+	text-transform: uppercase;
+	padding: 10px 5px;					/* replace default 7px - 10px padding */
+	color: #888;						/* replace default #000 color */
+	letter-spacing: 0.8px;
+	border-radius: 0px;					/* remove default border-raidus */
+}
+
+.box .box-content {
+	border: none;
+}
+
+	
+/* ------------------------------------
+	Clearning 
+ * ------------------------------------ */
+.clearbreak {
+	clear: both;
+}
+.clearafter:after {
+	height: 0;
+	clear: both;
+	content: "";
+	display: block;
+	visibility: hidden;
+}
+
+
+/* ------------------------------------
+	#container
+ * ------------------------------------ */
+
+#container {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    margin: 20px auto;
+    padding: 10px 20px 20px;
+    text-align: left;
+	width: 980px;
+}
+
+
+/* ------------------------------------
+	#header 
+ * ------------------------------------ */
+
+#header {
+    height: auto;					/* !!important to not overlap with slideshow */
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+	/* overflow: hidden; */			/* would cut off drop menu */
+}
+
+#header #topbar {
+	padding: 1px 0;
+	position: relative;
+	/* border-bottom: 1px solid #ddd; */
+}
+
+
+/* ------------------------------------
+	#header -> #topbar
+ * ------------------------------------ */
+
+#topbar .wrapper {
+    padding: 1px 0;
+	text-align: center;						/* center currency text when < 640px*/
+}
+
+#header #topbar {
+    /*font-size: 12px;	*/					/* no function, for pre-defined lower-lever font-size */
+    padding: 1px 0;
+    position: relative;
+}
+
+#topbar #currency {
+    left: 0;
+    position: relative;
+    top: 4px;								/* same line with .links */
+    width: auto;
+}
+
+#currency a {
+    border: medium none;					/* remove default border */
+	font-size: 11px;						/* unified sizes in #topbar */
+	
+}
+#currency a b {
+    color: #999;
+	font-weight: normal;					/* remove default bold font */
+}
+
+#topbar form {
+    float: left;
+}
+
+#header #welcome {
+	float: right;
+    position: relative;
+	margin: 5px auto;					/* same line with .links */
+    top: 0px;							/* same line with .links */
+	font-size: 11px;					/* unified 11px header font */
+}
+
+#header #welcome a {
+	color: #555555;						/* cover default blue color */
+	text-decoration: none;				/* remove underline */
+	transition: all 0.5s ease 0s;		/* transition effect */
+	font-size: 11px;					/* unified 11px header font 
+										 * replace default 12px */
+}
+
+#header #welcome a:hover {
+	color: #382eee;						/* hover effect on link */
+}
+
+#header .links {
+	position: relative;
+	width: 400px;
+    margin: 5px 0;						/* same line with #welcome */
+	top: 0px;							/* same line with #welcome */
+	text-align: left;					/* left align links content */
+}
+
+#header .links a {
+    color: #999;
+    display: inline-block;
+    float: none;
+    line-height: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+	font-size: 11px;					/* unified font in #topbar */
+	transition: all 0.5s ease 0s;		/* transition effect */
+}
+
+#header .links a:hover {
+	color: #382eee;						/* hover effect on link */
+}
+
+#header .links a + a {
+    border-left: medium none;
+    margin-left: 0px;
+}
+
+#header #logo {
+	float: left;
+}
+
+/* ------------------------------------
+	#header -> #toppanel
+ * ------------------------------------ */
+#header #logo {
+	position: relative;
+    float: left;
+    left: 0;
+    margin: 5px;
+    top: 0;
+	
+}
+
+/* ------------------------------------
+	#header  ->  #cart
+ * ------------------------------------ */
+
+#header #cart {
+    float: right;
+    min-width: 0;
+    position: relative;
+    right: 0;
+    top: 15px;
+    z-index: 16;
+}
+
+
+#cart .mini-cart-info .image {
+    width: 0px;							/* default width: 1px*/
+    display: none;						/* hidden image in mini cart */
+}
+
+/*
+ 		#search: 			z-index:	15;
+		#cart				z-index: 	16;
+		#cart .content		z-index:	20;
+		slideshow: 			z-index: 	6; 
+		#mainmenu-toggle: 	z-index: 	7;
+*/
+
+#header #cart.active {
+	background-color: #fff;		/* hide search or menu */
+}
+
+#header #cart .heading,
+#header #cart.active .heading {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0 5px;
+}
+
+#header #cart .heading h4 {
+	font-weight: normal;
+}
+
+#header #cart .heading h4:before {
+    font-family: FontAwesome;
+    padding-right: 5px;
+	content:"\f07a";
+	color: #585858;
+}
+
+
+#header #cart .heading a {
+    color: #555555;						/* replace default blue color */
+}
+
+#header #cart .heading a:hover {
+    color: #382eee;						/* replace default blue color */
+}
+
+#header #cart .content {
+	right: 0;
+	top: 100%;
+	width: 380px;
+	overflow: hidden;
+	position: absolute;
+	margin-top: -999px;							
+	-webkit-border-radius: 0px 0px 7px 7px;	/* remove top-right radius */
+	-moz-border-radius: 0px 0px 7px 7px;
+	-khtml-border-radius: 0px 0px 7px 7px;
+	border-radius: 0px 0px 7px 7px;
+}
+
+
+#header #cart.active .content {
+	margin-top: 0px;
+	border: 1px solid #ddd;
+}
+
+/* ------------------------------------
+	#header  ->  #search
+ * ------------------------------------ */
+
+#header #search {
+    float: right;
+    /* position: relative; */ /*!! when set relative, overlap with menu */
+	position: relative;		/* set position + top to center vertical align */
+    top: 25px;
+	right: 100px;
+    width: 200px;
+}
+
+#header .button-search {
+	position: absolute;
+	top: 0px;
+	/*left: 0px;*/
+	background: url('../image/button-search.png') center center no-repeat;
+	width: 28px;
+	height: 26px;
+	border-right: none;		/* remove search icon right border */
+	cursor: pointer;
+}
+
+#header .input-search {
+	width: 100%;
+}
+
+#header .input-search-wrapper {
+	display: table-cell;
+    width: 100%;
+}
+
+
+/* ------------------------------------
+		#topmenu - > #menu
+ * ------------------------------------ */
+
+#menu {
+	box-shadow: 0 2px 0 #DDDDDD;
+	/* height: 40px; */
+	border-radius: 2px;					/* replace default 5px radius */
+}
+
+#mainmenu-toggle {
+	display: none;						/* hide toggle button as default */
+}	
+
+.menuclear:after {
+	clear: both;
+}
+
+.menuclear {
+	*zoom: 1;
+}
+
+
+/* ------------------------------------
+	#content 
+ * ------------------------------------ */
+
+#content-wrapper {
+	float: left;
+}
+ 
+#content {
+	/* float: left; */ /* !!!! can not be set left */
+}
+#content .content {
+	padding: 10px;
+	overflow: auto;
+	margin-bottom: 20px;
+	border: 1px solid #EEEEEE;
+}
+#content .content .left {
+	float: left;
+	width: 49%;
+}
+#content .content .right {
+	float: right;
+	width: 49%;
+}
+
+/* ------------------------------------
+	#content -> .slideshow
+ * ------------------------------------ */
+	
+#content .slideshow {
+	width: 100%;
+	overflow: hidden; /* !! hide overflow sliding photo */
+	float: left;
+}
+
+
+/* ------------------------------------
+	#box-product
+ * ------------------------------------ */
+
+.box-product > div {
+	float: left;
+	text-align: center; 				/* center text */
+	white-space: nowrap;				/* no wrap text */
+	margin-right: 0px;					/* remove default right margin */
+	margin-bottom: 0px;					/* remove default 20px bottom margin */
+}
+
+.box-product div div {
+	display: block;
+	overflow: hidden;
+	margin: 5px 0;
+}
+
+.box-product .image {
+	/* border: 1px solid #FFF;*/			/* keep 1px border space to hovering */
+}
+.box-product .image:hover {
+	/* width: 119px; */
+	/* border: 1px solid #E7E7E7; */
+}
+
+.box-product .image img {
+	border: none;						/* remove default border */
+	vertical-align: middle;
+	border: none; 						/* remove default border */
+	padding: 0px; 						/* remove default padding */
+}
+
+
+.box-product .image img:hover {
+	/*border-color: #E15452;  		*/
+}
+
+.box-product .name a {
+    color: #4B4B4B;						/* new color for name */
+    font-weight: normal;				/* remove default heavy style */
+}
+
+.box-product .name a:hover {
+	color: #00D0DD;
+}
+
+.box-product .price {
+	margin-bottom: 10px;				/* replace default 4px */
+}
+
+.box-product .price,
+.box-product .price-new {				
+    font-weight: normal;				/* replace default bold font */
+}
+
+.product_holder .price {
+    font-family: 'Pontano Sans','Droid Sans', arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 23px;
+}
+
+
+/* ------------------------------------
+	.product-info
+		
+	Product Detail Page
+		
+ * ------------------------------------ */
+
+#content h1 {
+    color: #999999;
+    font-size: 20px;
+}
+
+.product-info {
+	line-height: 20px;
+}
+
+ .product-info  b {
+	font-weight: normal;				/* remove blod style */
+}
+ 
+.product-info .description span {
+    color: inherit;						/* replace special blue color */
+}
+
+.product-info .options > h2,
+.product-info .options > br {
+	display: none;						/* hidden Available Options */
+	
+}
+
+
+/* ------------------------------------
+	#content .product-list
+		
+	- Products List Page
+		
+ * ------------------------------------ */
+
+.product-filter {
+    line-height: 20px;
+}
+
+/* in-active filter choice */
+.product-filter .display a {		
+    color: #AAAAAA;
+    font-weight: normal;
+}
+
+.product-list .name {
+    float: left;
+}
+
+.product-list .description {
+    float: left;
+}
+ 
+ .product-list .name a {
+    color: #888;
+    font-weight: bold;
+}
+
+
+/* ------------------------------------
+   #tab-container
+ * ------------------------------------ */
+
+.htabs a {
+	font-weight: normal;
+	display: block;
+}
+
+.tab-content {
+	margin-bottom: 0px;					/* remove default 20px */
+}
+
+#tab-attribute .attribute thead td,
+#tab-attribute .attribute thead tr td:first-child,
+#tab-attribute .attribute tr td:first-child {
+	font-weight: normal;
+	color: #999999;						/* title color: #999 / #AAA */
+}
+
+
+/* ------------------------------------
+    .tags
+	
+ * ------------------------------------ */
+.tags {
+	margin: 5px auto;
+}
+
+ .tags b {
+	font-weight: normal;
+}
+
+
+/* ------------------------------------
+    .sitemap-info
+	
+ * ------------------------------------ */
+ 
+.sitemap-info ul {
+    padding-left: 20px;
+}
+ 
+
+/* ------------------------------------
+    .wishlist-info
+	
+ * ------------------------------------ */
+ 
+.wishlist-info table {
+	table-layout: fixed;
+}
+ 
+ 
+/* ------------------------------------
+	#footer
+ * ------------------------------------ */ 
+
+#footer {
+    background: #333;
+	padding: 0px; 							/* remove original padding=20px */
+	border-top: none;						/* reomve default top border */
+	border-bottom: 1px solid #333333;		/* */
+    border-top: 1px solid #333333;			/* */
+	font-size: 11px;
+}
+
+
+#footer .column {
+	float: left;
+	width: 23%;
+	margin: 10px 1%;
+	min-height: 100px;
+	text-align: left;
+}
+
+#footer .column h3 {
+	color: #666;
+	font-weight: normal;				/* replace h3 default blod style */
+	letter-spacing: 0.3px;		
+}
+
+#footer .column ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#footer .column ul li {
+	padding: 0;							/* remove default padding */
+	margin: 0;							/* remove default margin */
+	line-height: 19px;					/* unified line height with */
+}
+
+#footer .column a {
+    color: #666;
+}
+
+#footer .column a:hover{
+	color: #CCC;
+	transition: all 0.5s ease 0s;		/* transition effect */
+	text-decoration: none;
+}
+
+/* ------------------------------------
+	#powered
+ * ------------------------------------ */ 
+
+#powered {
+	margin: 0px;						/* remove default 5px top margin */
+	padding: 5px;
+	text-align: center;
+	clear: both;
+	background: #222;					/* same color with #footer */
+    color: #555;
+	font-size: 11px;
+}
+
+
+/* ------------------------------------
+	#colorbox 
+	- to fix ColorBox style
+ * ------------------------------------ */
+
+ #cboxTitle {
+    left: 20px!important;
+}

@@ -1,0 +1,82 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, body,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+	margin-bottom: 0px !important;
+	position: relative;
+	font-family: 'Roboto', arial, sans-serif;
+	background-attachment: fixed;
+	background-color: #000;
+	background-image: url(../images/bg-main.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 10000px;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+:focus {
+	outline: 0;
+}
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+input, textarea {
+outline: none;
+} 
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.clr{
+	clear: both;
+}
+
+.main_wrapper{
+  margin-right: auto;
+  margin-left: auto;
+  width: 970px;
+  clear: both;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #FFF;
+  padding-top: 5px;
+  height: 1000px;
+}
+
+header{
+	height: ;
+}
+
+
+
+
+
+
+
+
+
+
+
+

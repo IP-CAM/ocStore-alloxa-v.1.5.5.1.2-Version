@@ -1,0 +1,160 @@
+/* ArtPager */
+
+.pages .zag{
+	float: left;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	margin-right: 5px;
+	display: block;
+}
+.pages {
+	clear: both;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	font-size: 1.3em;
+	text-align: center;
+}
+.pages B {
+	PADDING-RIGHT: 9px; PADDING-LEFT: 9px; FONT-WEIGHT: normal; PADDING-BOTTOM: 7px; PADDING-TOP: 7px; BACKGROUND-COLOR: #e5f3ff
+}
+.pages A:hover {
+
+}
+.pages A {
+
+}	
+
+.ArtPager
+{
+	display:block;
+	margin-right: auto;
+	margin-left: auto;
+	height: 25px;
+}
+
+
+
+.ArtPager .innerText , .ArtPager .innerText2
+
+{
+	color:#767676;
+	display:inline-block;
+	padding:3px 15px;
+	width:250px;
+	
+}
+
+
+
+.ArtPager .innerText2
+
+{
+
+	width:25px;	
+
+	 
+
+}
+
+
+
+.ArtPager .pageLeft , .ArtPager .pageCenter , .ArtPager .pageRight , .ArtPager .pageLeftActive , .ArtPager .pageCenterActive , .ArtPager .pageRightActive
+
+{
+	display: inline-block;
+	color: #6d6f71;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.page-next {padding: 8px;}
+
+
+
+.ArtPager a.pageCenter:hover
+
+{
+
+
+}
+
+
+
+.ArtPager .pageLeft , .ArtPager .pageLeftActive
+
+{
+
+	background: url(../archives/css/images/pagerpageleft.gif) no-repeat;
+
+	
+
+}
+
+
+
+.ArtPager .pageLeftActive
+
+{
+
+	background: url(../archives/css/images/pagerpageleftactive.gif) no-repeat;	
+
+}
+
+
+
+.ArtPager .pageCenter , .ArtPager .pageCenterActive
+
+{
+	 
+	 
+	margin-right: 5px;
+	text-decoration: none;
+	margin-left: 0px;
+
+	
+
+}
+
+
+.ArtPager .pageCenterActive
+
+{
+	 
+	text-decoration: none;
+	color: #f79044;
+ 
+
+}
+
+
+
+.ArtPager .pageRight , .ArtPager .pageRightActive
+
+{
+ 
+	background: url(../archives/css/images/pagerpageright.gif) no-repeat;
+	margin-right:2px;
+
+	
+
+}
+
+
+
+.ArtPager .pageRightActive
+
+{
+
+	background: url(../archives/css/images/pagerpagerightactive.gif) no-repeat  !important;	
+
+}
+
+	
+
+/* /ArtPager */
+
+.cur {cursor:pointer;}
+* HTML .cur {
+cursor:hand;
+c\ursor:pointer;
+}
