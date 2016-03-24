@@ -18,7 +18,9 @@
    <?php } ?>
    <tfoot>
     <tr>
-     <td class="center" colspan="2"><a class="button" onclick="editProductList('rewards', 'upd');"><?php echo $button_save; ?></a></td>
+     <td class="center" colspan="2">
+      <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+      <a class="button" onclick="editProductList('rewards', 'upd');"><?php echo $button_save; ?></a></td>
     </tr>
    </tfoot>
   </table>

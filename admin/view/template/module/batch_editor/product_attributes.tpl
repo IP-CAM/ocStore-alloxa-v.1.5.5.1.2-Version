@@ -59,7 +59,11 @@
    <tfoot>
     <tr>
      <td class="center"><a onclick="addAttribute('attribute_list')"><img src="view/image/add.png" alt="<?php echo $button_insert; ?>" title="<?php echo $button_insert; ?>" /></a></td>
-     <td class="center" colspan="3"><a class="button" onclick="editProductList('attributes', 'upd');"><?php echo $button_save; ?></a> <a class="button" onclick="$('#dialog').dialog('close');">X</a></td>
+     <td class="center" colspan="3">
+      <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+      <a class="button" onclick="editProductList('attributes', 'upd');"><?php echo $button_save; ?></a>
+      <a class="button" onclick="$('#dialog').dialog('close');">X</a>
+     </td>
     </tr>
    </tfoot>
   </table>

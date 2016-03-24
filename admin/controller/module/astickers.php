@@ -445,7 +445,8 @@ class ControllerModuleAStickers extends Controller {
 		$this->data['entry_position'] = $this->language->get('entry_position');
 		$this->data['entry_status'] = $this->language->get('entry_status');
 		$this->data['entry_sort_order'] = $this->language->get('entry_sort_order');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_add_module'] = $this->language->get('button_add_module');
@@ -674,7 +675,8 @@ class ControllerModuleAStickers extends Controller {
 		$this->data['entry_name'] = $this->language->get('entry_name');
 		$this->data['entry_image'] = $this->language->get('entry_image');
 		$this->data['entry_sort_order'] = $this->language->get('entry_sort_order');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 		

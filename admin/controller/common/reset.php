@@ -52,7 +52,8 @@ class ControllerCommonReset extends Controller {
 	
 			$this->data['entry_password'] = $this->language->get('entry_password');
 			$this->data['entry_confirm'] = $this->language->get('entry_confirm');
-	
+
+			$this->data['button_apply'] = $this->language->get('button_apply');
 			$this->data['button_save'] = $this->language->get('button_save');
 			$this->data['button_cancel'] = $this->language->get('button_cancel');
 	

@@ -270,7 +270,8 @@ class ControllerLocalisationTaxClass extends Controller {
 		$this->data['entry_rate'] = $this->language->get('entry_rate');
 		$this->data['entry_based'] = $this->language->get('entry_based');
 		$this->data['entry_priority'] = $this->language->get('entry_priority');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_add_rule'] = $this->language->get('button_add_rule');

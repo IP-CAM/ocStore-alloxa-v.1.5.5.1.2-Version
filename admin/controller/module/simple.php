@@ -181,6 +181,7 @@ class ControllerModuleSimple extends Controller {
             'separator' => ' :: '
         );
 
+        $this->data['button_apply'] = $this->language->get('button_apply');
         $this->data['button_save']    = $this->language->get('button_save');
         $this->data['button_cancel']  = $this->language->get('button_cancel');
         $this->data['button_restore'] = $this->language->get('button_restore');
@@ -793,7 +794,8 @@ class ControllerModuleSimple extends Controller {
         if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
             $this->model_tool_simplecustom->updateData($this->request->get['type'], $this->request->get['id'], $this->request->get['set'], $this->request->post);
         }
-        
+
+        $this->data['button_apply'] = $this->language->get('button_apply');
         $this->data['button_save'] = $this->language->get('button_save');
 
         $this->data['custom'] = $this->model_tool_simplecustom->loadData($this->request->get['type'], $this->request->get['id'], $this->request->get['set']);

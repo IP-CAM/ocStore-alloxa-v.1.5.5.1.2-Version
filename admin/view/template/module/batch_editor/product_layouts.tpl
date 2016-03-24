@@ -50,7 +50,10 @@
    </tbody>
    <tfoot>
     <tr>
-     <td class="center" colspan="2"><a class="button" onclick="editProductList('layouts', 'upd');"><?php echo $button_save; ?></a> <a class="button" onclick="$('#dialog').dialog('close');">X</a></td>
+     <td class="center" colspan="2">
+      <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+      <a class="button" onclick="editProductList('layouts', 'upd');"><?php echo $button_save; ?></a>
+      <a class="button" onclick="$('#dialog').dialog('close');">X</a></td>
     </tr>
    </tfoot>
   </table>

@@ -286,6 +286,7 @@ class ControllerCatalogReview extends Controller {
 		$this->data['entry_good'] = $this->language->get('entry_good');
 		$this->data['entry_bad'] = $this->language->get('entry_bad');
 
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 

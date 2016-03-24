@@ -237,7 +237,8 @@ class ControllerSettingStore extends Controller {
 		$this->data['entry_image_wishlist'] = $this->language->get('entry_image_wishlist');
 		$this->data['entry_image_cart'] = $this->language->get('entry_image_cart');
 		$this->data['entry_secure'] = $this->language->get('entry_secure');
-				
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 

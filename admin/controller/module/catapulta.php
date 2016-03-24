@@ -28,6 +28,7 @@ class ControllerModuleCatapulta extends Controller {
 		$this->data['entry_phone_mask_status'] = $this->language->get('entry_phone_mask_status');
 		$this->data['entry_phone_text'] = $this->language->get('entry_phone_text');
 
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 

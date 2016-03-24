@@ -276,7 +276,8 @@ class ControllerDesignBanner extends Controller {
 		$this->data['entry_link'] = $this->language->get('entry_link');
 		$this->data['entry_image'] = $this->language->get('entry_image');		
 		$this->data['entry_status'] = $this->language->get('entry_status');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_add_banner'] = $this->language->get('button_add_banner');

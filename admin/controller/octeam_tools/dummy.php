@@ -9,7 +9,8 @@ class ControllerOcteamToolsDummy extends Controller {
 		
 		$this->document->setTitle($this->language->get('heading_title'));
 		$this->data['heading_title'] = $this->language->get('heading_title').sprintf($this->language->get('version'), $this->version);
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 		

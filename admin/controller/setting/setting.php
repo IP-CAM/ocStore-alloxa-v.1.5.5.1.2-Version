@@ -155,7 +155,8 @@ class ControllerSettingSetting extends Controller {
 		$this->data['entry_delivery_text'] = $this->language->get('entry_delivery_text');
 		$this->data['entry_payment_text'] = $this->language->get('entry_payment_text');
 		$this->data['entry_guarantee_text'] = $this->language->get('entry_guarantee_text');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 

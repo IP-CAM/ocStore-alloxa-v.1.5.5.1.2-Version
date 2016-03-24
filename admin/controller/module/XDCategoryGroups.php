@@ -18,6 +18,7 @@ class ControllerModuleXDCategoryGroups extends Controller {
         $this->data['XD_title'] = $this->language->get('XD_title');
         $this->data['XD_image'] = $this->language->get('XD_image');
         $this->data['XD_category'] = $this->language->get('XD_category');
+        $this->data['button_apply'] = $this->language->get('button_apply');
         $this->data['button_save'] = $this->language->get('button_save');
         $this->data['button_cancel'] = $this->language->get('button_cancel');
         $this->data['token'] = $this->session->data['token'];
@@ -63,6 +64,7 @@ class ControllerModuleXDCategoryGroups extends Controller {
         $this->data['entry_status'] = $this->language->get('entry_status');
         $this->data['entry_sort_order'] = $this->language->get('entry_sort_order');
 
+        $this->data['button_apply'] = $this->language->get('button_apply');
         $this->data['button_save'] = $this->language->get('button_save');
         $this->data['button_cancel'] = $this->language->get('button_cancel');
         $this->data['button_add_module'] = $this->language->get('button_add_module');

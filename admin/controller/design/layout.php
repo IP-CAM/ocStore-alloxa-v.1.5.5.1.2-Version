@@ -266,7 +266,8 @@ class ControllerDesignLayout extends Controller {
 		$this->data['entry_name'] = $this->language->get('entry_name');
 		$this->data['entry_store'] = $this->language->get('entry_store');
 		$this->data['entry_route'] = $this->language->get('entry_route');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_add_route'] = $this->language->get('button_add_route');

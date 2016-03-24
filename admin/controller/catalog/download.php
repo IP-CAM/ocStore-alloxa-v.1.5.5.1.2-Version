@@ -1,4 +1,4 @@
-<?php  
+<?php
 class ControllerCatalogDownload extends Controller {  
 	private $error = array();
    
@@ -269,7 +269,8 @@ class ControllerCatalogDownload extends Controller {
 		$this->data['entry_mask'] = $this->language->get('entry_mask');
     	$this->data['entry_remaining'] = $this->language->get('entry_remaining');
     	$this->data['entry_update'] = $this->language->get('entry_update');
-  
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
     	$this->data['button_save'] = $this->language->get('button_save');
     	$this->data['button_cancel'] = $this->language->get('button_cancel');
   		$this->data['button_upload'] = $this->language->get('button_upload');

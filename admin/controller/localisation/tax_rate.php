@@ -284,7 +284,8 @@ class ControllerLocalisationTaxRate extends Controller {
 		$this->data['entry_type'] = $this->language->get('entry_type');		
 		$this->data['entry_customer_group'] = $this->language->get('entry_customer_group');
 		$this->data['entry_geo_zone'] = $this->language->get('entry_geo_zone');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 

@@ -269,6 +269,7 @@ class ControllerLocalisationGeoZone extends Controller {
 		$this->data['entry_country'] = $this->language->get('entry_country');
 		$this->data['entry_zone'] = $this->language->get('entry_zone');
 
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_add_geo_zone'] = $this->language->get('button_add_geo_zone');

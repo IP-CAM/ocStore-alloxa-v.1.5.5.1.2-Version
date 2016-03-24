@@ -30,7 +30,8 @@ class ControllerOcteamToolsSeoKeywordChecker extends Controller {
 		$this->data['text_wait'] = $this->language->get('text_wait');
 		$this->data['text_updated'] = $this->language->get('text_updated');
 		$this->data['text_deleted'] = $this->language->get('text_deleted');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_find_duplicates'] = $this->language->get('button_find_duplicates');

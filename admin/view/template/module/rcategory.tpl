@@ -15,7 +15,9 @@
 		<?php if (!$is_installed) { ?>
 			<a onclick="location='<?php echo $create; ?>';" class="button"><span><?php echo $button_create; ?></span></a>
 		<?php } ?>
-		<a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a onclick="location = '<?php echo $cancel; ?>';" class="button"><?php echo $button_cancel; ?></a></div>
+        <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+		<a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a>
+        <a onclick="location = '<?php echo $cancel; ?>';" class="button"><?php echo $button_cancel; ?></a></div>
   </div>
   <div class="content">
     <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">

@@ -267,7 +267,8 @@ class ControllerUserUserPermission extends Controller {
 		$this->data['entry_name'] = $this->language->get('entry_name');
 		$this->data['entry_access'] = $this->language->get('entry_access');
 		$this->data['entry_modify'] = $this->language->get('entry_modify');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 

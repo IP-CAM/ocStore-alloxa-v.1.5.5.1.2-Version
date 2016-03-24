@@ -36,7 +36,8 @@ class ControllerModuleCategoryOption extends Controller {
 
 	 if ($check->num_rows) {		
   		$this->data['heading_title'] = $this->language->get('heading_title');
-  		$this->data['button_save'] = $this->language->get('button_save');
+		 $this->data['button_apply'] = $this->language->get('button_apply');
+		 $this->data['button_save'] = $this->language->get('button_save');
   		$this->data['button_cancel'] = $this->language->get('button_cancel');
       $this->data['entry_status']= $this->language->get('entry_status');
       $this->data['text_notice']    = $this->language->get("text_notice");

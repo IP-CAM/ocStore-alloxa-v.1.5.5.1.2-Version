@@ -53,7 +53,10 @@
    <tfoot>
     <tr>
      <td class="left"><a onclick="addSpecial('special_list');"><img alt="<?php echo $button_insert; ?>" title="<?php echo $button_insert; ?>" src="view/image/add.png"/></a></td>
-     <td class="center" colspan="5"><a class="button" onclick="editProductList('specials', 'upd');"><?php echo $button_save; ?></a> <a class="button" onclick="$('#dialog').dialog('close');">X</a></td>
+     <td class="center" colspan="5">
+      <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+      <a class="button" onclick="editProductList('specials', 'upd');"><?php echo $button_save; ?></a>
+      <a class="button" onclick="$('#dialog').dialog('close');">X</a></td>
     </tr>
    </tfoot>
   </table>
