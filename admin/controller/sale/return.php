@@ -573,7 +573,8 @@ class ControllerSaleReturn extends Controller {
  		$this->data['entry_reason'] = $this->language->get('entry_reason');
 		$this->data['entry_opened'] = $this->language->get('entry_opened');
 		$this->data['entry_action'] = $this->language->get('entry_action');
-			
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
     	$this->data['button_cancel'] = $this->language->get('button_cancel');
 
@@ -898,7 +899,8 @@ class ControllerSaleReturn extends Controller {
 			$this->data['entry_return_status'] = $this->language->get('entry_return_status');
 			$this->data['entry_notify'] = $this->language->get('entry_notify');
 			$this->data['entry_comment'] = $this->language->get('entry_comment');
-			
+
+			$this->data['button_apply'] = $this->language->get('button_apply');
 			$this->data['button_save'] = $this->language->get('button_save');
 			$this->data['button_cancel'] = $this->language->get('button_cancel');
 			$this->data['button_add_history'] = $this->language->get('button_add_history');				

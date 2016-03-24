@@ -25,7 +25,9 @@
    <tfoot>
     <tr>
      <td class="center"><a onclick="addImage('images_list');"><img src="view/image/add.png" alt="<?php echo $button_insert; ?>" title="<?php echo $button_insert; ?>" /></a></td>
-     <td class="center" colspan="4"><a class="button" onclick="editProductList('images', 'upd');"><?php echo $button_save; ?></a></td>
+     <td class="center" colspan="4">
+      <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+      <a class="button" onclick="editProductList('images', 'upd');"><?php echo $button_save; ?></a></td>
     </tr>
    </tfoot>
   </table>

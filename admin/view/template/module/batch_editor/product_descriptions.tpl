@@ -60,7 +60,10 @@
   <?php } ?>
   <table class="list">
    <tr>
-    <td class="center"><a class="button" onclick="editProductList('descriptions', 'upd');"><?php echo $button_save; ?></a> <a class="button" onclick="$('#dialog').dialog('close');">X</a></td>
+    <td class="center">
+     <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+     <a class="button" onclick="editProductList('descriptions', 'upd');"><?php echo $button_save; ?></a>
+     <a class="button" onclick="$('#dialog').dialog('close');">X</a></td>
    </tr>
   </table>
  </form>

@@ -39,6 +39,7 @@ class ControllerShippingnovaposhta extends Controller {
         $this->data['entry_delivery_nal'] = $this->language->get('entry_delivery_nal');
         $this->data['entry_min_total_for_free_delivery'] = $this->language->get('entry_min_total_for_free_delivery');
 
+        $this->data['button_apply'] = $this->language->get('button_apply');
         $this->data['button_save'] = $this->language->get('button_save');
         $this->data['button_cancel'] = $this->language->get('button_cancel');
 

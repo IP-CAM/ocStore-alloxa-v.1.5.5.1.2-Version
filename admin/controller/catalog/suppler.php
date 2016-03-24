@@ -632,7 +632,8 @@ class ControllerCatalogSuppler extends Controller {
 		$this->data['entry_newurl1'] = $this->language->get('entry_newurl1');
 		$this->data['entry_fields'] = $this->language->get('entry_fields');
 		$this->data['entry_data'] = $this->language->get('entry_data');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
     	$this->data['button_save'] = $this->language->get('button_save');
     	$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_base'] = $this->language->get('button_base');

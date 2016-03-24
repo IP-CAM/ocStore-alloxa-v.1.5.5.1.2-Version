@@ -74,7 +74,9 @@ function selectbox_html($name, $value, $fields, $type='hidden', $help = '') {
             </select>
         </div>
         <?php } ?>
-        <a onclick="$('#form').submit();" class="button"><span><?php echo $button_save; ?></span></a><a onclick="location = '<?php echo str_replace("'", "\\'",$cancel); ?>';" class="button"><span><?php echo $button_cancel; ?></span></a></div>
+        <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+        <a onclick="$('#form').submit();" class="button"><span><?php echo $button_save; ?></span></a>
+        <a onclick="location = '<?php echo str_replace("'", "\\'",$cancel); ?>';" class="button"><span><?php echo $button_cancel; ?></span></a></div>
   </div>
   <div class="content">
     <div id="tabs" class="htabs">

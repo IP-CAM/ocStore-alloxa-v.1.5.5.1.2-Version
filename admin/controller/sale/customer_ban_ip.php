@@ -265,7 +265,8 @@ class ControllerSaleCustomerBanIp extends Controller {
     	$this->data['heading_title'] = $this->language->get('heading_title');
  		
     	$this->data['entry_ip'] = $this->language->get('entry_ip');
- 
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
     	$this->data['button_cancel'] = $this->language->get('button_cancel');
 

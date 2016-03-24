@@ -925,7 +925,8 @@ class ControllerCatalogProduct extends Controller {
 		$this->data['entry_product_memory'] = $this->language->get('entry_product_memory');
 		$this->data['entry_short'] = $this->language->get('entry_short');
 		$this->data['entry_f_text'] = $this->language->get('entry_f_text');
-				
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
     	$this->data['button_save'] = $this->language->get('button_save');
     	$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_add_attribute'] = $this->language->get('button_add_attribute');

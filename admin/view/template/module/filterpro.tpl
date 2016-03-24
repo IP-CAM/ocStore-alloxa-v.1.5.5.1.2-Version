@@ -12,7 +12,7 @@
   <div class="heading">
     <h1><img src="view/image/module.png" alt="" /> <?php echo $heading_title; ?></h1>
     <div class="buttons">
-	<a class="button" id="apply_button" onclick="apply()"><span><?php echo $button_apply; ?></span></a>
+		<a class="button" id="apply_button" onclick="apply()"><span><?php echo $button_apply; ?></span></a>
 		<a onclick="$('#form').submit();" class="button"><span><?php echo $button_save; ?></span></a><a onclick="location = '<?php echo $cancel; ?>';" class="button"><span><?php echo $button_cancel; ?></span></a></div>
   </div>
   <div class="content">

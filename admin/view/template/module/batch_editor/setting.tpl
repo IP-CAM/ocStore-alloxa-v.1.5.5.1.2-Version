@@ -17,6 +17,7 @@ tbody tr.hover td {
   <div class="heading">
    <h1><img src="view/image/product.png" alt="" /> <?php echo $heading_title; ?></h1>
    <div class="buttons">
+    <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
     <a class="button" onclick="$('#form_setting').submit();"><?php echo $button_save; ?></a>
     <a class="button" onclick="location = '<?php echo $cancel; ?>';"><?php echo $button_cancel; ?></a>
    </div>

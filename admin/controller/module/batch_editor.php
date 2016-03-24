@@ -549,6 +549,7 @@ class ControllerModuleBatchEditor extends Controller {
 			
 			$this->data['button_insert'] = $this->language->get('button_insert');
 			$this->data['button_remove'] = $this->language->get('button_remove');
+			$this->data['button_apply'] = $this->language->get('button_apply');
 			$this->data['button_save'] = $this->language->get('button_save');
 			
 			foreach ($this->links[$path]['lang'] as $lang) {
@@ -709,7 +710,8 @@ class ControllerModuleBatchEditor extends Controller {
 		
 		$this->data['text_yes'] = $this->language->get('text_yes');
 		$this->data['text_no'] = $this->language->get('text_no');
-		
+
+		$this->data['button_apply'] = $this->language->get('button_apply');
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_setting'] = $this->language->get('button_setting');
