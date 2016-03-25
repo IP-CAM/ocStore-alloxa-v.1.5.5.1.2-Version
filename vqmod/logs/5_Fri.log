@@ -1,0 +1,127 @@
+---------- Date: 2016-03-25 09:46:02 ~ IP : 188.163.70.182 ----------
+REQUEST URI : /admin/index.php?route=catalog/product&amp;token=61bbaaaf3a8799237fe6fcf451d0217a
+MOD DETAILS:
+   modFile   : D:\Alloxa\Sites\new.alloxa.com\vqmod/xml/att_to_cat.xml
+   id        : Attributes to category group
+   version   : 1.1
+   vqmver    : 2.3.0
+   author    : Edo
+
+File Name    : admin/model/catalog/product.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->db->query("INSERT INTO " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "', sku = '" . $this->db->escape($data['sku']) . "', upc = '" . $this->db->escape($data['upc']) . "', ean = '" . $this->db->escape($data['ean']) . "', jan = '" . $this->db->escape($data['jan']) . "', isbn = '" . $this->db->escape($data['isbn']) . "', mpn = '" . $this->db->escape($data['mpn']) . "', location = '" . $this->db->escape($data['location']) . "', quantity = '" . (int)$data['quantity'] . "', minimum = '" . (int)$data['minimum'] . "', subtract = '" . (int)$data['subtract'] . "', stock_status_id = '" . (int)$data['stock_status_id'] . "', date_available = '" . $this->db->escape($data['date_available']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', shipping = '" . (int)$data['shipping'] . "', price = '" . (float)$data['price'] . "', points = '" . (int)$data['points'] . "', weight = '" . (float)$data['weight'] . "', weight_class_id = '" . (int)$data['weight_class_id'] . "', length = '" . (float)$data['length'] . "', width = '" . (float)$data['width'] . "', height = '" . (float)$data['height'] . "', length_class_id = '" . (int)$data['length_class_id'] . "', status = '" . (int)$data['status'] . "', tax_class_id = '" . $this->db->escape($data['tax_class_id']) . "', sort_order = '" . (int)$data['sort_order'] . "', date_added = NOW()");
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-03-25 10:13:05 ~ IP : 188.163.70.182 ----------
+REQUEST URI : /admin/index.php?route=catalog/product/update&amp;token=61bbaaaf3a8799237fe6fcf451d0217a&amp;product_id=47017
+MOD DETAILS:
+   modFile   : D:\Alloxa\Sites\new.alloxa.com\vqmod/xml/vqmod_bulk_options.xml
+   id        : Bulk Options to products
+   version   : 1.0
+   vqmver    : 2.1.7
+   author    : Kamen Sharlandjiev
+
+File Name    : admin/view/template/catalog/product_form.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $('#product-category').append(
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-03-25 12:00:37 ~ IP : 188.163.70.182 ----------
+REQUEST URI : /admin/index.php?route=catalog/product/update&amp;token=3d26bf7f1d52b0c8a92c2214a21f390e&amp;product_id=47017
+MOD DETAILS:
+   modFile   : D:\Alloxa\Sites\new.alloxa.com\vqmod/xml/vqmod_bulk_options.xml
+   id        : Bulk Options to products
+   version   : 1.0
+   vqmver    : 2.1.7
+   author    : Kamen Sharlandjiev
+
+File Name    : admin/view/template/catalog/product_form.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $('#product-category').append(
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-03-25 12:05:29 ~ IP : 188.163.70.182 ----------
+REQUEST URI : /admin/index.php?route=catalog/product/update&amp;token=3d26bf7f1d52b0c8a92c2214a21f390e&amp;product_id=47017
+MOD DETAILS:
+   modFile   : D:\Alloxa\Sites\new.alloxa.com\vqmod/xml/vqmod_bulk_options.xml
+   id        : Bulk Options to products
+   version   : 1.0
+   vqmver    : 2.1.7
+   author    : Kamen Sharlandjiev
+
+File Name    : admin/view/template/catalog/product_form.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $('#product-category').append(
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-03-25 12:08:21 ~ IP : 188.163.70.182 ----------
+REQUEST URI : /admin/index.php?route=catalog/product/update&amp;token=3d26bf7f1d52b0c8a92c2214a21f390e&amp;product_id=47017
+MOD DETAILS:
+   modFile   : D:\Alloxa\Sites\new.alloxa.com\vqmod/xml/vqmod_bulk_options.xml
+   id        : Bulk Options to products
+   version   : 1.0
+   vqmver    : 2.1.7
+   author    : Kamen Sharlandjiev
+
+File Name    : admin/view/template/catalog/product_form.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $('#product-category').append(
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-03-25 12:09:15 ~ IP : 188.163.70.182 ----------
+REQUEST URI : /admin/index.php?route=catalog/product/update&amp;token=3d26bf7f1d52b0c8a92c2214a21f390e&amp;product_id=47017
+MOD DETAILS:
+   modFile   : D:\Alloxa\Sites\new.alloxa.com\vqmod/xml/vqmod_bulk_options.xml
+   id        : Bulk Options to products
+   version   : 1.0
+   vqmver    : 2.1.7
+   author    : Kamen Sharlandjiev
+
+File Name    : admin/view/template/catalog/product_form.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $('#product-category').append(
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-03-25 12:24:30 ~ IP : 188.163.70.182 ----------
+REQUEST URI : /admin/index.php?route=catalog/product/update&amp;token=3d26bf7f1d52b0c8a92c2214a21f390e&amp;product_id=47017
+MOD DETAILS:
+   modFile   : D:\Alloxa\Sites\new.alloxa.com\vqmod/xml/vqmod_bulk_options.xml
+   id        : Bulk Options to products
+   version   : 1.0
+   vqmver    : 2.1.7
+   author    : Kamen Sharlandjiev
+
+File Name    : admin/view/template/catalog/product_form.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $('#product-category').append(
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-03-25 15:16:50 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /
+VQMod::_parseMods - FILE "C:\OpenServer\domains\alloxa\vqmod/xml/catapulta.xml" REQUIRES VQMOD "2.5.0" OR ABOVE AND HAS BEEN SKIPPED
+MOD DETAILS:
+   modFile   : C:\OpenServer\domains\alloxa\vqmod/xml/select-city.xml
+   id        : Select City
+   version   : 1.0.0
+   vqmver    : 2.3.2
+   author    : 
+VQModObject::parseMods - Could not resolve path for [catalog/model/tool/simpleapimain.php] (SKIPPED)
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-03-25 16:08:01 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /admin/index.php?route=catalog/product&amp;token=460a3739ccf8d91fb16d7e7cdbaf5dad
+MOD DETAILS:
+   modFile   : C:\OpenServer\domains\alloxa\vqmod/xml/att_to_cat.xml
+   id        : Attributes to category group
+   version   : 1.1
+   vqmver    : 2.3.0
+   author    : Edo
+
+File Name    : admin/model/catalog/product.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->db->query("INSERT INTO " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "', sku = '" . $this->db->escape($data['sku']) . "', upc = '" . $this->db->escape($data['upc']) . "', ean = '" . $this->db->escape($data['ean']) . "', jan = '" . $this->db->escape($data['jan']) . "', isbn = '" . $this->db->escape($data['isbn']) . "', mpn = '" . $this->db->escape($data['mpn']) . "', location = '" . $this->db->escape($data['location']) . "', quantity = '" . (int)$data['quantity'] . "', minimum = '" . (int)$data['minimum'] . "', subtract = '" . (int)$data['subtract'] . "', stock_status_id = '" . (int)$data['stock_status_id'] . "', date_available = '" . $this->db->escape($data['date_available']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', shipping = '" . (int)$data['shipping'] . "', price = '" . (float)$data['price'] . "', points = '" . (int)$data['points'] . "', weight = '" . (float)$data['weight'] . "', weight_class_id = '" . (int)$data['weight_class_id'] . "', length = '" . (float)$data['length'] . "', width = '" . (float)$data['width'] . "', height = '" . (float)$data['height'] . "', length_class_id = '" . (int)$data['length_class_id'] . "', status = '" . (int)$data['status'] . "', tax_class_id = '" . $this->db->escape($data['tax_class_id']) . "', sort_order = '" . (int)$data['sort_order'] . "', date_added = NOW()");
+
+----------------------------------------------------------------------
+
+

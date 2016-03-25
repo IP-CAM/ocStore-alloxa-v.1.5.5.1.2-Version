@@ -1,0 +1,24 @@
+php_flag display_errors On
+<FilesMatch "\.(tpl|ini|log)">
+ Order deny,allow
+ Deny from all
+</FilesMatch>
+
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www\aloxa.elit-master\.com.ua)(:80)? [NC]
+RewriteRule ^(.*) http://tryboi.com/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ http://tryboi.com/ [R=301,L]
+
+RewriteBase /
+RewriteRule ^(contact)$ index.php?route=information/$1
+RewriteRule ^(account/return/insert)$ index.php?route=$1
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
+RewriteCond %{QUERY_STRING} ^route=common/home$
+
+ErrorDocument 404 /
+ErrorDocument 403 /
+

@@ -1,0 +1,248 @@
+
+<modification>
+	<id>Attributes to category group</id>
+	<version>1.1</version>
+	<vqmver>2.3.0</vqmver>
+	<author>Edo</author>
+	<email>edo@melionet.com</email>
+	
+	 <file name="admin/controller/common/home.php">
+		<operation>
+			 <search position="after"><![CDATA[public function index() {]]></search>
+			 <add><![CDATA[
+				$this->db->query("CREATE TABLE IF NOT EXISTS " . DB_PREFIX . "attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8;");    
+                
+                $check = $this->db->query("SHOW COLUMNS FROM " . DB_PREFIX . "product LIKE 'locked_editing';");
+                if (($check->num_rows) == 0) {              
+				$this->db->query("ALTER TABLE " . DB_PREFIX . "product ADD locked_editing tinyint(1) NOT NULL;");    
+				} ]]>
+               </add>   
+        </operation>
+    </file>
+	
+	<file name="admin/model/catalog/category.php">
+		<operation>
+			<search position="after"><![CDATA[class ModelCatalogCategory extends Model {]]></search>
+			<add>
+				<![CDATA[
+					/* public function getAttributesByCategory($category_id) {
+						$result = array();
+						$query = $this->db->query("SELECT attribute_id FROM " . DB_PREFIX . "attributes_category  WHERE category_id=" . $category_id);
+						foreach($query->rows as $row) {
+							$result[] = $row['attribute_id'];
+						}
+						return $result;
+					}		
+					
+					public function getAttributesToProduct($category_ids) {
+						$result = array();
+						$query = $this->db->query("SELECT DISTINCT attribute_id FROM " . DB_PREFIX . "attributes_category  WHERE category_id IN (" . implode(", ", $category_ids) . ")");
+						foreach ($query->rows as $row) {
+							$attr_id = $row['attribute_id'];
+							$sub_query = $this->db->query("SELECT attribute_id, name FROM " . DB_PREFIX . "attribute_description WHERE attribute_id= '" . (int)$attr_id . "' AND language_id = '" . (int)$this->config->get('config_language_id') . "'");
+							foreach($sub_query->rows as $row2) {
+							$result[] = array('attribute_id' => $row2['attribute_id'], 'name' => $row2['name']);	
+							}			
+						}
+						return $result;
+					} */	
+				]]>
+			</add>
+		</operation>
+		
+		<operation>
+			<search position="before" index="1"><![CDATA[$this->cache->delete('category');]]></search>
+			<add>
+				<![CDATA[
+					if (isset($data['attributes_category'])) {
+						foreach ($data['attributes_category'] as $attributes_category) {
+							$this->db->query(("INSERT INTO " . DB_PREFIX . "attributes_category VALUES (" . (int)$attributes_category . ", " . (int)$category_id . ")"));
+						}
+				}
+				]]>
+			</add>
+		</operation>
+		
+		<operation>
+			<search position="before" index="2"><![CDATA[$this->cache->delete('category');]]></search>
+			<add>
+				<![CDATA[
+					$this->db->query("DELETE FROM " . DB_PREFIX . "attributes_category WHERE category_id=" . (int)$category_id);	
+					
+					if (isset($data['attributes_category'])) {
+						foreach ($data['attributes_category'] as $attributes_category) {
+								$this->db->query(("INSERT INTO " . DB_PREFIX . "attributes_category VALUES (" . (int)$attributes_category . ", " . (int)$category_id . ")"));
+						}
+					}
+				]]>
+			</add>
+		</operation>
+	</file>
+	
+	<file name="admin/controller/catalog/category.php">
+            <operation>
+            <search position="before"><![CDATA[$this->template = 'catalog/category_form.tpl';]]></search>
+            <add><![CDATA[
+				$this->load->model('catalog/attribute');
+				
+				$attribute_total = $this->model_catalog_attribute->getTotalAttributes();
+				
+				$results = $this->model_catalog_attribute->getAttributes();
+				
+				foreach ($results as $result) { 
+					$this->data['attributes'][] = array(
+					'attribute_id'    => $result['attribute_id'],
+					'name'            => $result['name'],
+					'attribute_group' => $result['attribute_group'],
+					'sort_order'      => $result['sort_order'],
+					'selected'        => isset($this->request->post['selected']) && in_array($result['attribute_id'], $this->request->post['selected']),
+					);
+				}
+				
+				$this->data['attributes_category'] = array();
+				if (isset($this->request->get['category_id'])) {
+					$this->data['attributes_category'] = $this->model_catalog_category->getAttributesByCategory($this->request->get['category_id']);
+				}			
+			]]></add>
+		</operation>		
+	</file>
+	
+	<file name="admin/view/template/catalog/category_form.tpl">
+		<operation>
+			<search position=""><![CDATA[<td><?php echo $entry_store; ?></td>]]></search>	
+		<add>
+			<![CDATA[
+			<td><?php echo 'Аттрибуты товаров категории'; ?></td>
+				<td><div class="scrollbox" style="height: 500px;">
+					<?php $class = 'even'; ?>
+					<?php foreach ($attributes as $attributes_to_cat) { ?>
+					<?php $class = ($class == 'even' ? 'odd' : 'even'); ?>
+					<div class="<?php echo $class; ?>">
+					  <?php if (in_array($attributes_to_cat['attribute_id'], $attributes_category)) { ?>
+					  <input type="checkbox" name="attributes_category[]" value="<?php echo $attributes_to_cat['attribute_id']; ?>" checked="checked" />
+					  <?php echo $attributes_to_cat['name']; ?>
+					  <?php } else { ?>
+					  <input type="checkbox" name="attributes_category[]" value="<?php echo $attributes_to_cat['attribute_id']; ?>" />
+					  <?php echo $attributes_to_cat['name']; ?>
+					  <?php } ?>
+					</div>
+					<?php } ?>
+				  </div></td>
+			</tr>
+            <tr>
+			]]>
+		</add>
+		</operation>
+	</file>
+	
+	<file name="admin/controller/catalog/product.php">
+        <operation>
+            <search index="2" position="before"><![CDATA[		if (isset($this->request->post['product_category'])) {]]></search>
+            <add><![CDATA[		$existed_attributes = array();
+		foreach ($this->data['product_attributes'] as $product_attribute) {
+			$existed_attributes[] = $product_attribute['attribute_id'];
+		}
+		]]>
+		</add>
+		</operation>
+		
+		<operation>
+            <search position="before"><![CDATA[if (isset($this->request->post['product_related'])) {]]></search>
+            <add><![CDATA[
+		
+		if (($this->data['product_category']) && isset($product_info) && ($product_info['locked_editing']) == 0) {
+			$attributesByCategory = $this->model_catalog_category->getAttributesToProduct($this->data['product_category']);
+			foreach($attributesByCategory as $attribute) {
+				if (in_array($attribute['attribute_id'], $existed_attributes)) {
+					continue;
+				}
+				$this->data['product_attributes'][] = array('attribute_id' => $attribute['attribute_id'], 'name' => $attribute['name'], 'product_attribute_description' => array((int)$this->config->get('config_language_id') => array('text' => "")));
+			}
+		}
+
+		]]></add>
+        </operation>
+		
+		<operation>
+		<search position="before">
+		<![CDATA[
+			    	if (isset($this->request->post['weight'])) {
+		]]>
+		</search>
+		<add>
+		<![CDATA[
+		if (isset($this->request->post['locked_editing'])) {
+      		$this->data['locked_editing'] = $this->request->post['locked_editing'];
+    	} elseif (!empty($product_info)) {
+			$this->data['locked_editing'] = $product_info['locked_editing'];
+		} else {
+      		$this->data['locked_editing'] = 1;
+    	}
+		]]></add>
+		</operation>
+		
+        <operation>
+            <search position="before"><![CDATA[
+            'selected'   => isset($this->request->post['selected']) && in_array($result['product_id'], $this->request->post['selected']),]]>
+            </search>
+            <add><![CDATA[
+			'locked_editing'     => $result['locked_editing'],
+			]]>
+			</add>
+        </operation>
+    </file>
+      
+      
+    <file name="admin/model/catalog/product.php">
+		<operation>
+			<search position="replace">
+			<![CDATA[
+				$this->db->query("INSERT INTO " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "', sku = '" . $this->db->escape($data['sku']) . "', upc = '" . $this->db->escape($data['upc']) . "', ean = '" . $this->db->escape($data['ean']) . "', jan = '" . $this->db->escape($data['jan']) . "', isbn = '" . $this->db->escape($data['isbn']) . "', mpn = '" . $this->db->escape($data['mpn']) . "', location = '" . $this->db->escape($data['location']) . "', quantity = '" . (int)$data['quantity'] . "', minimum = '" . (int)$data['minimum'] . "', subtract = '" . (int)$data['subtract'] . "', stock_status_id = '" . (int)$data['stock_status_id'] . "', date_available = '" . $this->db->escape($data['date_available']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', shipping = '" . (int)$data['shipping'] . "', price = '" . (float)$data['price'] . "', points = '" . (int)$data['points'] . "', weight = '" . (float)$data['weight'] . "', weight_class_id = '" . (int)$data['weight_class_id'] . "', length = '" . (float)$data['length'] . "', width = '" . (float)$data['width'] . "', height = '" . (float)$data['height'] . "', length_class_id = '" . (int)$data['length_class_id'] . "', status = '" . (int)$data['status'] . "', tax_class_id = '" . $this->db->escape($data['tax_class_id']) . "', sort_order = '" . (int)$data['sort_order'] . "', date_added = NOW()");
+			]]>
+			</search>
+			<add>
+			<![CDATA[
+				$this->db->query("INSERT INTO " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "', sku = '" . $this->db->escape($data['sku']) . "', upc = '" . $this->db->escape($data['upc']) . "', ean = '" . $this->db->escape($data['ean']) . "', jan = '" . $this->db->escape($data['jan']) . "', isbn = '" . $this->db->escape($data['isbn']) . "', mpn = '" . $this->db->escape($data['mpn']) . "', location = '" . $this->db->escape($data['location']) . "', quantity = '" . (int)$data['quantity'] . "', minimum = '" . (int)$data['minimum'] . "', subtract = '" . (int)$data['subtract'] . "', stock_status_id = '" . (int)$data['stock_status_id'] . "', date_available = '" . $this->db->escape($data['date_available']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', shipping = '" . (int)$data['shipping'] . "', price = '" . (float)$data['price'] . "', points = '" . (int)$data['points'] . "', weight = '" . (float)$data['weight'] . "', weight_class_id = '" . (int)$data['weight_class_id'] . "', length = '" . (float)$data['length'] . "', width = '" . (float)$data['width'] . "', height = '" . (float)$data['height'] . "', length_class_id = '" . (int)$data['length_class_id'] . "', status = '" . (int)$data['status'] . "', locked_editing = '" . (int)$data['locked_editing'] . "', tax_class_id = '" . $this->db->escape($data['tax_class_id']) . "', sort_order = '" . (int)$data['sort_order'] . "', date_added = NOW()");
+			]]>
+			</add>
+		</operation>
+		
+		<operation>
+			<search position="replace">
+			<![CDATA[
+				$this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "', sku = '" . $this->db->escape($data['sku']) . "', upc = '" . $this->db->escape($data['upc']) . "', ean = '" . $this->db->escape($data['ean']) . "', jan = '" . $this->db->escape($data['jan']) . "', isbn = '" . $this->db->escape($data['isbn']) . "', mpn = '" . $this->db->escape($data['mpn']) . "', location = '" . $this->db->escape($data['location']) . "', quantity = '" . (int)$data['quantity'] . "', minimum = '" . (int)$data['minimum'] . "', subtract = '" . (int)$data['subtract'] . "', stock_status_id = '" . (int)$data['stock_status_id'] . "', date_available = '" . $this->db->escape($data['date_available']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', shipping = '" . (int)$data['shipping'] . "', price = '" . (float)$data['price'] . "', points = '" . (int)$data['points'] . "', weight = '" . (float)$data['weight'] . "', weight_class_id = '" . (int)$data['weight_class_id'] . "', length = '" . (float)$data['length'] . "', width = '" . (float)$data['width'] . "', height = '" . (float)$data['height'] . "', length_class_id = '" . (int)$data['length_class_id'] . "', status = '" . (int)$data['status'] . "', tax_class_id = '" . $this->db->escape($data['tax_class_id']) . "', sort_order = '" . (int)$data['sort_order'] . "', date_modified = NOW() WHERE product_id = '" . (int)$product_id . "'");			]]>
+			</search>
+			<add>
+			<![CDATA[
+				$this->db->query("UPDATE " . DB_PREFIX . "product SET model = '" . $this->db->escape($data['model']) . "', sku = '" . $this->db->escape($data['sku']) . "', upc = '" . $this->db->escape($data['upc']) . "', ean = '" . $this->db->escape($data['ean']) . "', jan = '" . $this->db->escape($data['jan']) . "', isbn = '" . $this->db->escape($data['isbn']) . "', mpn = '" . $this->db->escape($data['mpn']) . "', location = '" . $this->db->escape($data['location']) . "', quantity = '" . (int)$data['quantity'] . "', minimum = '" . (int)$data['minimum'] . "', subtract = '" . (int)$data['subtract'] . "', stock_status_id = '" . (int)$data['stock_status_id'] . "', date_available = '" . $this->db->escape($data['date_available']) . "', manufacturer_id = '" . (int)$data['manufacturer_id'] . "', shipping = '" . (int)$data['shipping'] . "', price = '" . (float)$data['price'] . "', points = '" . (int)$data['points'] . "', weight = '" . (float)$data['weight'] . "', weight_class_id = '" . (int)$data['weight_class_id'] . "', length = '" . (float)$data['length'] . "', width = '" . (float)$data['width'] . "', height = '" . (float)$data['height'] . "', length_class_id = '" . (int)$data['length_class_id'] . "', status = '" . (int)$data['status'] . "', locked_editing = '" . (int)$data['locked_editing'] . "', tax_class_id = '" . $this->db->escape($data['tax_class_id']) . "', sort_order = '" . (int)$data['sort_order'] . "', date_modified = NOW() WHERE product_id = '" . (int)$product_id . "'");			
+			]]>
+			</add>
+		</operation>
+		
+    </file>
+    <file name="admin/view/template/catalog/product_form.tpl">
+        <operation>
+        <search position="before">
+        <![CDATA[<td><?php echo $entry_sort_order; ?></td>]]>
+        </search>
+        <add><![CDATA[
+            <tr>
+              <td><?php echo 'Locked editing'; ?></td>
+              <td><select name="locked_editing">
+                  <?php if ($locked_editing) { ?>
+                  <option value="1" selected="selected"><?php echo 'Locked'; ?></option>
+                  <option value="0"><?php echo 'Unlocked'; ?></option>
+                  <?php } else { ?>
+                  <option value="1"><?php echo 'Locked'; ?></option>
+                  <option value="0" selected="selected"><?php echo 'Unlocked'; ?></option>
+                  <?php } ?>
+                </select></td>
+            </tr>
+            ]]>
+        </add>
+        </operation>
+    </file>
+</modification>

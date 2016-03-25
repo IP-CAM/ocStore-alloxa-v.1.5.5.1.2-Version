@@ -1,0 +1,404 @@
+<modification>
+	<id>Bulk Options to products</id>
+	<version>1.0</version>
+	<vqmver>2.1.7</vqmver>
+	<author>Kamen Sharlandjiev</author>
+	<file name="admin/controller/catalog/option.php">
+        <operation>
+            <search position="before"><![CDATA[$this->data['token'] = $this->session->data['token'];]]></search>
+            <add><![CDATA[
+    // options to Categories
+     if ($this->config->get('categoryoption_status')) {
+        $this->data['entry_category'] = $this->language->get('entry_category');
+        $this->data['entry_add_all'] = $this->language->get('entry_add_all');        
+    		$this->data['text_select_all'] = $this->language->get('text_select_all');
+    		$this->data['text_unselect_all'] = $this->language->get('text_unselect_all');
+    
+    		$this->load->model('catalog/category');
+    				
+    		$this->data['categories'] = $this->model_catalog_category->getCategories(0);
+    		
+    		if (isset($this->request->post['option_category'])) {
+    			$this->data['option_category'] = $this->request->post['option_category'];
+    		} elseif (isset($this->request->get['option_id'])) {
+    			$this->data['option_category'] = $this->model_catalog_option->getoptionCategories($this->request->get['option_id']);
+    		} else {
+    			$this->data['option_category'] = array();
+    		}		
+    		if (isset($this->request->post['add_all_values'])) {
+    			$this->data['add_all_values'] = $this->request->post['add_all_values'];
+    		} elseif (!empty($option_info)) {
+    			$this->data['add_all_values'] = $option_info['add_all_values'];
+    		} else {
+    			$this->data['add_all_values'] = 0;
+    		}
+     }
+		// End of options to Categories                  
+             ]]></add>
+        </operation>
+	</file>    
+	<file name="admin/language/*/catalog/option.php">
+        <operation>
+            <search position="before"><![CDATA[?>]]></search>
+            <add><![CDATA[
+// options to categories
+$_['entry_category']  = 'Category: <span class="help">Attach this option to category, when you link product to the category, the option will appear automatically in the option tab.</span>';      
+$_['entry_add_all'] = 'Add all option values:';                
+             ]]></add>
+        </operation>
+	</file>    
+	<file name="admin/model/catalog/option.php">
+        <operation>
+            <search position="before" offset="1"><![CDATA[?>]]></search>
+            <add><![CDATA[          
+// options to Categories
+  public function getoptionCategories($option_id) {
+		$option_category_data = array();
+		
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "option_to_category WHERE option_id = '" . (int)$option_id . "'");
+		
+		foreach ($query->rows as $result) {
+			$option_category_data[] = $result['category_id'];
+		}
+
+		return $option_category_data;
+
+  }
+// End of options to Categories            
+             ]]></add>
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[foreach ($data['option_description'] as $language_id => $value) {]]></search>
+            <add><![CDATA[          
+		// options to Categories
+		if ($this->config->get('categoryoption_status')) {
+  		$this->db->query("DELETE FROM " . DB_PREFIX . "option_to_category WHERE option_id = '" . (int)$option_id . "'");
+  		if (isset($data['option_category'])) {
+  			foreach ($data['option_category'] as $category_id) {
+  				$this->db->query("INSERT INTO " . DB_PREFIX . "option_to_category SET option_id = '" . (int)$option_id . "', category_id = '" . (int)$category_id . "'");
+  			}
+  		}
+    }
+		// options to Categories	            
+             ]]></add>
+        </operation>       
+        
+        <operation>
+            <search position="replace"><![CDATA[`" . DB_PREFIX . "option` SET]]></search>
+            <add><![CDATA[`" . DB_PREFIX . "option` SET add_all_values='".(isset($data['add_all_values'])?$data['add_all_values']:0)."', ]]></add>
+        </operation>        
+        
+        `" . DB_PREFIX . "option` SET
+	</file>  
+
+	<file name="admin/view/template/catalog/option_form.tpl">
+        <operation>
+            <search position="before" offset="1"><![CDATA[<td><?php echo $entry_sort_order; ?></td>]]></search>
+            <add><![CDATA[  
+          <!-- options to Categories -->
+          <?php  if ($this->config->get('categoryoption_status')) { ?>
+            <tr>
+              <td><?php echo $entry_category; ?></td>
+              <td><div class="scrollbox">
+                  <?php $class = 'odd'; ?>
+                  <?php foreach ($categories as $category) { ?>
+                  <?php $class = ($class == 'even' ? 'odd' : 'even'); ?>
+                  <div class="<?php echo $class; ?>">
+                    <?php if (in_array($category['category_id'], $option_category)) { ?>
+                    <input type="checkbox" name="option_category[]" value="<?php echo $category['category_id']; ?>" checked="checked" />
+                    <?php echo $category['name']; ?>
+                    <?php } else { ?>
+                    <input type="checkbox" name="option_category[]" value="<?php echo $category['category_id']; ?>" />
+                    <?php echo $category['name']; ?>
+                    <?php } ?>
+                  </div>
+                  <?php } ?>
+                </div>
+                <a onclick="$(this).parent().find(':checkbox').attr('checked', true);"><?php echo $text_select_all; ?></a> / <a onclick="$(this).parent().find(':checkbox').attr('checked', false);"><?php echo $text_unselect_all; ?></a></td>
+            </tr>   
+            <tr>
+              <td><?php echo $entry_add_all;?></td>
+              <td><input type="checkbox" name="add_all_values" value="1" <?php if ($add_all_values) {echo "checked='checked'";}?>/></td>
+            </tr>       
+          <?php } ?>
+          <!-- End of options to Categories           -->                    
+             ]]></add>
+        </operation>
+	</file>    	
+	
+	<file name="admin/controller/catalog/product.php">
+        <operation>
+            <search position="before" offset="1"><![CDATA[?>]]></search>
+            <add><![CDATA[    
+	// options to Categories
+	public function getoptions() {
+		$this->load->model('catalog/product');
+		$this->load->language('catalog/product');
+    $this->data['text_yes']                   = $this->language->get('text_yes');
+    $this->data['text_no']                    = $this->language->get('text_no');
+    $this->data['text_plus']                  = $this->language->get('text_plus');
+    $this->data['text_minus']                 = $this->language->get('text_minus');
+    $this->data['text_default']               = $this->language->get('text_default');
+    $this->data['text_image_manager']         = $this->language->get('text_image_manager');
+    $this->data['text_browse']                = $this->language->get('text_browse');
+    $this->data['text_clear']                 = $this->language->get('text_clear');
+    $this->data['text_option']                = $this->language->get('text_option');
+    $this->data['text_option_value']          = $this->language->get('text_option_value');
+    $this->data['text_select']                = $this->language->get('text_select');
+    $this->data['text_none']                  = $this->language->get('text_none');
+    $this->data['text_percent']               = $this->language->get('text_percent');
+    $this->data['text_amount']                = $this->language->get('text_amount');
+    $this->data['entry_price']                = $this->language->get('entry_price');
+    $this->data['entry_option_points']        = $this->language->get('entry_option_points');
+    $this->data['entry_subtract']             = $this->language->get('entry_subtract');
+    $this->data['entry_image']                = $this->language->get('entry_image');
+    $this->data['entry_option']               = $this->language->get('entry_option');
+    $this->data['entry_option_value']         = $this->language->get('entry_option_value');
+    $this->data['entry_required']             = $this->language->get('entry_required');
+    $this->data['entry_sort_order']           = $this->language->get('entry_sort_order');
+    $this->data['entry_status']               = $this->language->get('entry_status');
+    $this->data['entry_date_start']           = $this->language->get('entry_date_start');
+    $this->data['entry_date_end']             = $this->language->get('entry_date_end');
+    $this->data['entry_priority']             = $this->language->get('entry_priority');
+    $this->data['entry_customer_group']       = $this->language->get('entry_customer_group');
+    $this->data['entry_reward']               = $this->language->get('entry_reward');
+    $this->data['button_save']                = $this->language->get('button_save');
+    $this->data['button_cancel']              = $this->language->get('button_cancel');
+    $this->data['button_add_option']          = $this->language->get('button_add_option');
+    $this->data['button_add_option_value']    = $this->language->get('button_add_option_value');
+    $this->data['button_remove']              = $this->language->get('button_remove');
+    $this->data['entry_quantity']             = $this->language->get('entry_quantity');
+    $this->data['entry_weight']               = $this->language->get('entry_weight');
+
+		if (isset($this->request->get['category_id']) && $this->request->get['category_id']>0) {
+			$category_id = $this->request->get['category_id'];
+		} else {
+			$category_id = -1;
+		}
+		if (isset($this->request->get['product_id'])) {
+			$product_id = $this->request->get['product_id'];
+		} else {
+			$product_id = 0;
+		}			
+		$this->load->model('localisation/language');
+		$this->load->model('catalog/option');
+
+		$languages = $this->model_localisation_language->getLanguages();
+		
+		
+		$product_options = $this->model_catalog_product->getCategoryOptions($category_id, $product_id);
+
+		$this->data['product_options'] = array();
+			
+		foreach ($product_options as $product_option) {
+			if ($product_option['type'] == 'select' || $product_option['type'] == 'radio' || $product_option['type'] == 'checkbox' || $product_option['type'] == 'image') {
+				$product_option_value_data = array();
+				
+				foreach ($product_option['product_option_value'] as $product_option_value) {
+					$product_option_value_data[] = array(
+						'product_option_value_id' => $product_option_value['product_option_value_id'],
+						'option_value_id'         => $product_option_value['option_value_id'],
+						'quantity'                => $product_option_value['quantity'],
+						'subtract'                => $product_option_value['subtract'],
+						'price'                   => $product_option_value['price'],
+						'price_prefix'            => $product_option_value['price_prefix'],
+						'points'                  => $product_option_value['points'],
+						'points_prefix'           => $product_option_value['points_prefix'],						
+						'weight'                  => $product_option_value['weight'],
+						'weight_prefix'           => $product_option_value['weight_prefix']	
+					);
+				}
+				
+				$this->data['product_options'][] = array(
+					'product_option_id'    => $product_option['option_id'],
+					'product_option_value' => $product_option_value_data,
+					'option_id'            => $product_option['option_id'],
+					'name'                 => $product_option['name'],
+					'type'                 => $product_option['type'],
+					'required'             => $product_option['required']
+				);				
+			} else {
+				$this->data['product_options'][] = array(
+					'product_option_id' => $product_option['option_id'],
+					'option_id'         => $product_option['option_id'],
+					'name'              => $product_option['name'],
+					'type'              => $product_option['type'],
+					'option_value'      => (isset($product_option['option_value']))?$product_option['option_value']:'',
+					'required'          => $product_option['required']
+				);				
+			}
+		}
+		
+		$this->data['option_values'] = array();
+		
+		foreach ($this->data['product_options'] as $product_option) {
+			if ($product_option['type'] == 'select' || $product_option['type'] == 'radio' || $product_option['type'] == 'checkbox' || $product_option['type'] == 'image') {
+				if (!isset($this->data['option_values'][$product_option['option_id']])) {
+					$this->data['option_values'][$product_option['option_id']] = $this->model_catalog_option->getOptionValues($product_option['option_id']);
+				}
+			}
+		}
+                    
+		$this->data['token'] = $this->request->get['token'];
+		$this->template = 'catalog/bulk_options.tpl';
+		$html = $this->render();
+		$this->response->setOutput(json_encode($html));
+	}
+	//End of options to Categories                  
+             ]]></add>
+        </operation>
+	</file>    	
+	<file name="admin/model/catalog/product.php">
+        <operation>
+            <search position="before" offset="1"><![CDATA[?>]]></search>
+            <add><![CDATA[          
+	// options to Categories
+	public function getCategoryOptions($category_list, $product_id) {
+		$product_option_data = array();
+		if ((int)$product_id ){
+    		$q="SELECT a.type, pa.option_id, ad.name, pa.required, a.add_all_values FROM " . DB_PREFIX . "product_option pa LEFT JOIN " . DB_PREFIX . "option a ON (pa.option_id = a.option_id) LEFT JOIN " . DB_PREFIX . "option_description ad ON (a.option_id = ad.option_id) WHERE pa.product_id = '" . (int)$product_id . "' AND ad.language_id = '" . (int)$this->config->get('config_language_id') . "' 
+    		  UNION 
+    		SELECT a.type, a.option_id, ad.name, 0 as required, a.add_all_values FROM ".DB_PREFIX."option a, ".DB_PREFIX."option_description ad, ".DB_PREFIX."option_to_category ag, ".DB_PREFIX."product_to_category p2c WHERE p2c.product_id='" . (int)$product_id . "' AND (p2c.category_id=ag.category_id OR ag.category_id IN (".$category_list.")) AND ag.option_id=a.option_id AND a.option_id=ad.option_id AND ad.language_id = '" . (int)$this->config->get('config_language_id') . "' GROUP BY option_id";
+		} else {
+      $q  = "SELECT DISTINCT o.type, ac.option_id, ad.name, 0 as required, o.add_all_values FROM ".DB_PREFIX."option_to_category ac LEFT JOIN ".DB_PREFIX."option_description ad ON (ac.option_id=ad.option_id) LEFT JOIN ".DB_PREFIX."option o ON (ad.option_id=o.option_id) WHERE ac.category_id IN (".$this->db->escape($category_list).") AND ad.language_id='".(int)$this->config->get('config_language_id')."'";    	
+    	
+		}
+		$product_option_query = $this->db->query($q);
+        
+		foreach ($product_option_query->rows as $product_option) {
+			$product_option_description_data = array();
+			if ($product_id) {
+    			$product_option_description_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option WHERE product_id = '" . (int)$product_id . "' AND option_id = '" . (int)$product_option['option_id'] . "'");
+    			
+    			foreach ($product_option_description_query->rows as $product_option_description) {
+    				$product_option_description_data[$product_option_description['language_id']] = array('text' => $product_option_description['text']);
+    			}
+			}
+      $product_option_value_data = array();
+      $product_option_value_query = null;
+      if ($product_id) {			
+        $sql = "SELECT 
+          product_option_value_id as bulk_product_option_value_id,
+          option_value_id as bulk_option_value_id,
+          quantity as bulk_quantity,
+          subtract as bulk_subtract,
+          price as bulk_price,
+          price_prefix as bulk_price_prefix,
+          points_prefix as bulk_points_prefix,
+          points as bulk_points,
+          weight as bulk_weight,
+          weight_prefix as bulk_weight_prefix    
+         FROM 
+          " . DB_PREFIX . "product_option_value 
+        WHERE product_option_id = '" . (int)$product_option['option_id'] . "'";
+        $product_option_value_query = $this->db->query($sql);      
+      } else {
+        if (isset($product_option['add_all_values']) && $product_option['add_all_values']>0) {
+          $sql = "SELECT 
+            0 as bulk_product_option_value_id,
+            option_value_id as bulk_option_value_id,
+            '' as bulk_quantity,
+            '' as bulk_subtract,
+            '' as bulk_price,
+            '' as bulk_price_prefix,
+            '' as bulk_points_prefix,
+            '' as bulk_points,
+            '' as bulk_weight,
+            '' as bulk_weight_prefix
+          FROM ".DB_PREFIX."option_value_description
+          
+          WHERE 
+            option_id='".(int)(int)$product_option['option_id'] ."'
+          ";
+
+          $product_option_value_query = $this->db->query($sql);
+
+        }          
+      }
+			$product_option_value_data = array();
+			if (!empty($product_option_value_query->rows)){
+  			foreach ($product_option_value_query->rows as $product_option_value) {
+  				$product_option_value_data[] = array(
+  					'product_option_value_id' => $product_option_value['bulk_product_option_value_id'],
+  					'option_value_id'         => $product_option_value['bulk_option_value_id'],
+  					'quantity'                => $product_option_value['bulk_quantity'],
+  					'subtract'                => $product_option_value['bulk_subtract'],
+  					'price'                   => $product_option_value['bulk_price'],
+  					'price_prefix'            => $product_option_value['bulk_price_prefix'],
+  					'points'                  => $product_option_value['bulk_points'],
+  					'points_prefix'           => $product_option_value['bulk_points_prefix'],						
+  					'weight'                  => $product_option_value['bulk_weight'],
+  					'weight_prefix'           => $product_option_value['bulk_weight_prefix']					
+  				);
+  			}
+			}
+			
+			$product_option_data[] = array(
+				'option_id'                     => $product_option['option_id'],
+				'name'                          => $product_option['name'],
+				'required'                      => $product_option['required'],
+				'type'                          => $product_option['type'],
+				'product_option_description'    => $product_option_description_data,
+				'product_option_value'          => $product_option_value_data,
+				
+			);
+		}
+		
+		return $product_option_data;
+	}	
+	// End of options to Categories            
+             ]]></add>
+        </operation>
+	</file>    	
+	<file name="admin/view/template/catalog/product_form.tpl">
+        <operation>
+            <search position="after"><![CDATA[$('#product-category').append(]]></search>
+            <add><![CDATA[load_options();]]></add>
+        </operation>  
+        <operation>
+            <search position="after" offset="2"><![CDATA[$('#product-category div img').live('click', function() {]]></search>
+            <add><![CDATA[load_options();]]></add>
+        </operation>          	
+        <operation>
+            <search position="before"><![CDATA[<?php echo $footer; ?>]]></search>
+            <add><![CDATA[          
+<!-- options to Categories -->
+<?php if ($this->config->get('categoryoption_status')) {?>
+<script type="text/javascript"><!--
+$('input[name=\'product_category[]\']').change(function() {
+    load_options();
+});
+
+ function load_options() {
+  <?php if (isset($this->request->get['product_id'])) {?>
+    var product_id = '<?php echo $this->request->get['product_id'];?>';
+  <?php } else {?>
+  var product_id = 0;
+  <?php } ?>
+
+    var selected;
+    $('input[name=\'product_category[]\']').each(function() {
+      if ($(this).val()) {
+        if (!selected){
+            selected=$(this).val();
+        }else {
+            selected+=","+$(this).val();
+        }	         
+      }
+    });
+
+	$.ajax({
+		url: 'index.php?route=catalog/product/getoptions&token=<?php echo $token; ?>&category_id=' + selected+'&product_id='+product_id,
+		dataType: 'json',
+		success: function(data) {
+	 			$('#tab-option').html(data);
+		}
+	});
+ }
+load_options();
+//--></script> 
+<?php } ?>            
+             ]]></add>
+        </operation>
+	</file>    
+</modification>

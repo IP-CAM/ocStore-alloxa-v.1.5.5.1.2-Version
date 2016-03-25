@@ -510,10 +510,10 @@ class ModelCatalogProduct extends Model {
 				}				
 
 				if ($data['limit'] < 1) {
-					$data['limit'] = 20;
+					$data['limit'] = '0';
 				}	
 			
-				$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+				$sql .= ($data['limit']==0? "" : " LIMIT " . (int)$data['start'] . "," . (int)$data['limit']);
 			}	
 			
 			$query = $this->db->query($sql);

@@ -1,0 +1,14 @@
+---------- Date: 2016-01-03 17:37:20 ~ IP : 31.202.228.202 ----------
+REQUEST URI : /admin/index.php?route=catalog/product/update&amp;token=bb07a0c9605f7293089d634cb63c8d5d&amp;product_id=47797&amp;filter_category_id=null&amp;sort=pd.name&amp;order=ASC
+MOD DETAILS:
+   modFile   : D:\Alloxa\Sites\new.alloxa.com\vqmod/xml/vqmod_bulk_options.xml
+   id        : Bulk Options to products
+   version   : 1.0
+   vqmver    : 2.1.7
+   author    : Kamen Sharlandjiev
+
+File Name    : admin/view/template/catalog/product_form.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $('#product-category').append(
+----------------------------------------------------------------------
+
+

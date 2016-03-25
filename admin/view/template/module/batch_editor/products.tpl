@@ -72,7 +72,7 @@
      <a onclick="getProductList(<?php echo $product['product_id']; ?>, 'stores')"><?php echo $column_stores; ?></a><?php echo ($setting['counter']) ? '(' . $product['stores'] . ')' : ''; ?>
      <a onclick="getProductList(<?php echo $product['product_id']; ?>, 'downloads')"><?php echo $column_downloads; ?></a><?php echo ($setting['counter']) ? '(' . $product['downloads'] . ')' : ''; ?>
      <a onclick="getProductList(<?php echo $product['product_id']; ?>, 'layouts')"><?php echo $column_design; ?></a><?php echo ($setting['counter']) ? '(' . $product['layouts'] . ')' : ''; ?>
-     <?php if (VERSION >= '1.5.5') { ?>
+     <?php if (VERSION >= '1.5.5' && false) { // false - if disable filter ?>
      <a onclick="getProductList(<?php echo $product['product_id']; ?>, 'filters')"><?php echo $column_filters; ?></a><?php echo ($setting['counter']) ? '(' . $product['filters'] . ')' : ''; ?>
      <?php } ?>
     </div>

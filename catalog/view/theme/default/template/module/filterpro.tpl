@@ -71,7 +71,7 @@
 						   value="<?php echo $category['category_id']; ?>">
 				</td>
 				<td>
-					<label for="cat_<?php echo $category['category_id']; ?>"><?php echo $category['name']; ?></label>
+					<label for="cat_<?php echo $category['category_id']; ?>">  <?php echo $category['name']; ?></label>
 				</td>
 			</tr>
 			<?php } ?>

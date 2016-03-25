@@ -5,6 +5,7 @@ $_['heading_title']                    = 'Администрирование';
 // Text
 $_['text_affiliate']                   = 'Партнерская программа';
 $_['text_attribute']                   = 'Атрибуты';
+$_['text_attributic']                  = 'Добавление атрибутов по шаблону';
 $_['text_attribute_group']             = 'Группы атрибутов';
 
 $_['text_backup']                      = 'Бэкап / Восстановление';
@@ -26,6 +27,7 @@ $_['text_error_log']                   = 'Журнал ошибок';
 $_['text_extension']                   = 'Дополнения';
 $_['text_feed']                        = 'Каналы продвижения';
 $_['text_filter']                      = 'Фильтры';
+$_['text_filterpro_mega']              = 'FilterPro v2.4.2 (mega)';
 $_['text_front']                       = 'Магазин';
 $_['text_geo_zone']                    = 'Географические зоны';
 $_['text_help']                        = 'Помощь';
@@ -42,6 +44,7 @@ $_['text_manufacturer']                = 'Производители';
 	$_["text_suppler"]                	   = "Поставщики"; /*suppler*/
 $_['text_module']                      = 'Модули';
 $_['text_option']                      = 'Опции';
+$_['text_optionar']                    = 'Шаблоны опций';
 $_['text_order']                       = 'Заказы';
 $_['text_order_status']                = 'Статусы заказов';
 $_['text_opencart']                    = 'Сайт';

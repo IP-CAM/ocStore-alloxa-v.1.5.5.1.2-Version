@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 'on');
+ini_set('log_errors', 1);
+ini_set('error_reporting', 1);
+ini_set('display_startup_errors', 'on');
 // Version
 define('VERSION', '1.5.5.1.2');
 
@@ -95,7 +99,7 @@ function error_handler($errno, $errstr, $errfile, $errline) {
 
 // Error Handler
 set_error_handler('error_handler');
-		
+
 // Request
 $request = new Request();
 $registry->set('request', $request);
@@ -103,15 +107,15 @@ $registry->set('request', $request);
 // Response
 $response = new Response();
 $response->addHeader('Content-Type: text/html; charset=utf-8');
-$registry->set('response', $response); 
+$registry->set('response', $response);
 
 // Cache
 $cache = new Cache();
-$registry->set('cache', $cache); 
+$registry->set('cache', $cache);
 
 // Session
 $session = new Session();
-$registry->set('session', $session); 
+$registry->set('session', $session);
 
 // Language
 $languages = array();
