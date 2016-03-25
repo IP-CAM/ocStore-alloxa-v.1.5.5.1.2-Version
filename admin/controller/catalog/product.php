@@ -78,7 +78,7 @@ class ControllerCatalogProduct extends Controller {
 		} else {
 			$limit = $this->config->get('config_admin_limit');
 		}
-						
+
 		$url = '';
 						
 		if (isset($this->request->get['filter_name'])) {
@@ -123,7 +123,7 @@ class ControllerCatalogProduct extends Controller {
 		if (isset($this->request->get['limit'])) {
 			$url .= '&limit=' . $this->request->get['limit'];
 		}
-		
+
 		$data = array(
 			'filter_name'	  => $filter_name, 
 			'filter_category_id'	  => $filter_category_id, 
@@ -654,7 +654,8 @@ class ControllerCatalogProduct extends Controller {
 		);
 		
 		$this->load->model('tool/image');
-		
+
+
 		$product_total = $this->model_catalog_product->getTotalProducts($data);
 			
 		$results = $this->model_catalog_product->getProducts($data);
@@ -1193,6 +1194,7 @@ class ControllerCatalogProduct extends Controller {
 		$this->load->model('tool/image');
 
 		$this->data['hide_image'] = $product_info['hide_image'];
+
 		if (isset($this->request->post['image']) && file_exists(DIR_IMAGE . $this->request->post['image'])) {
 			$this->data['thumb'] = $this->model_tool_image->resize($this->request->post['image'], 100, 100);
 		} elseif (!empty($product_info) && $product_info['image'] && file_exists(DIR_IMAGE . $product_info['image'])) {
