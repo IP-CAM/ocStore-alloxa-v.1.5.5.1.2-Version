@@ -298,8 +298,10 @@
                   </div>
                   <?php } ?>
                 </div>
+                  <div>
                 <a onclick="$(this).parent().find(':checkbox').attr('checked', true);"><?php echo $text_select_all; ?></a> / <a onclick="$(this).parent().find(':checkbox').attr('checked', false);"><?php echo $text_unselect_all; ?></a></td>
-            </tr> 
+                </div>
+            </tr><!--
             <tr>
               <td><?php echo $entry_filter; ?></td>
               <td><input type="text" name="filter" value="" /></td>
@@ -315,7 +317,7 @@
                   </div>
                   <?php } ?>
                 </div></td>
-            </tr>                       
+            </tr>  -->
             <tr>
               <td><?php echo $entry_store; ?></td>
               <td><div class="scrollbox">
@@ -1401,11 +1403,28 @@ $('#vtab-option a').tabs();
 //--></script> 
 <script type="text/javascript"><!--
  $(document).ready(function(){
-     $('.scrollbox').resizable();
+//     $('.scrollbox').resizable();
     $(".hide").hide();
   $("a.hidelink").click(function () {
       $(".hide").toggle("slow");
     });
+     $(".scrollbox")
+             .wrap('<div/>')
+             .css({'overflow':'hidden'})
+             .parent()
+             .css({'display':'inline-block',
+                  'overflow':'hidden',
+                  'height':function(){return $('.scrollbox',this).height();},
+                  'width':  function(){return $('.scrollbox',this).width();},
+                  'paddingBottom':'12px',
+                  'paddingRight':'12px'
+
+                 }).resizable()
+             .find('.scrollbox')
+             .css({overflow:'auto',
+                            width:'100%',
+                            height:'100%'});
+
     $('#colorSelector').ColorPicker({
       onSubmit: function(hsb, hex, rgb, el) {
         $(el).val(hex);

@@ -11,7 +11,11 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/category.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
+      <div class="buttons">
+          <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+          <a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a>
+          <a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a>
+      </div>
     </div>
     <div class="content">
       <div id="tabs" class="htabs"><a href="#tab-general"><?php echo $tab_general; ?></a><a href="#tab-data"><?php echo $tab_data; ?></a><a href="#tab-design"><?php echo $tab_design; ?></a></div>
@@ -72,6 +76,7 @@
                 <?php } ?>
               </select></td>
             </tr>
+              <!--
             <tr>
               <td><?php echo $entry_filter; ?></td>
               <td><input type="text" name="filter" value="" /></td>
@@ -88,6 +93,7 @@
                   <?php } ?>
                 </div></td>
             </tr>
+            -->
             <tr>
               <td><?php echo $entry_store; ?></td>
               <td><div class="scrollbox">
@@ -347,13 +353,13 @@ $('#languages a').tabs();
     var ie = 0;
     var op = 0;
     var ff = 0;
-    var block; // Основной блок
-    var block_r; // Блок для изменения размеров
-    var delta_w = 0; // Изменение по ширине
-    var delta_h = 0; // Изменение по высоте
-    /* После загрузки страницы */
+    var block; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+    var block_r; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    var delta_w = 0; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    var delta_h = 0; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     onload = function () {
-        /* Определяем браузер */
+        /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         var browser = navigator.userAgent;
         if (browser.indexOf("Opera") != -1) op = 1;
         else {
@@ -362,12 +368,12 @@ $('#languages a').tabs();
                 if (browser.indexOf("Firefox") != -1) ff = 1;
             }
         }
-        block = document.getElementById("block"); // Получаем основной блок
-        block_r = document.getElementById("block_resize"); // Получаем блок для изменения размеров
-        document.onmouseup = clearXY; // Ставим обработку на отпускание кнопки мыши
-        block_r.onmousedown = saveWH; // Ставим обработку на нажатие кнопки мыши
+        block = document.getElementById("block"); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+        block_r = document.getElementById("block_resize"); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        document.onmouseup = clearXY; // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+        block_r.onmousedown = saveWH; // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     }
-    /* Функция для получения текущих координат курсора мыши */
+    /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
     function getXY(obj_event) {
         if (obj_event) {
             x = obj_event.pageX;
@@ -385,39 +391,55 @@ $('#languages a').tabs();
     }
     function saveWH(obj_event) {
         var point = getXY(obj_event);
-        w_block = block.clientWidth; // Текущая ширина блока
-        h_block = block.clientHeight; // Текущая высота блока
-        delta_w = w_block - point[0]; // Измеряем текущую разницу между шириной и x-координатой мыши
-        delta_h = h_block - point[1]; // Измеряем текущую разницу между высотой и y-координатой мыши
-        /* Ставим обработку движения мыши для разных браузеров */
+        w_block = block.clientWidth; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+        h_block = block.clientHeight; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+        delta_w = w_block - point[0]; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ x-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+        delta_h = h_block - point[1]; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ y-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+        /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         document.onmousemove = resizeBlock;
         if (op || ff) document.addEventListener("onmousemove", resizeBlock, false);
-        return false; // Отключаем стандартную обработку нажатия мыши
+        return false; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     }
-    /* Функция для измерения ширины окна */
+    /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
     function clientWidth() {
         return document.documentElement.clientWidth == 0 ? document.body.clientWidth : document.documentElement.clientWidth;
     }
-    /* Функция для измерения высоты окна */
+    /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
     function clientHeight() {
         return document.documentElement.clientHeight == 0 ? document.body.clientHeight : document.documentElement.clientHeight;
     }
-    /* При отпускании кнопки мыши отключаем обработку движения курсора мыши */
+    /* пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
     function clearXY() {
         document.onmousemove = null;
     }
     function resizeBlock(obj_event) {
         var point = getXY(obj_event);
-        new_w = delta_w + point[0]; // Изменяем новое приращение по ширине
-        new_h = delta_h + point[1]; // Изменяем новое приращение по высоте
-        block.style.width = new_w + "px"; // Устанавливаем новую ширину блока
-        block.style.height = new_h + "px"; // Устанавливаем новую высоту блока
-        /* Если блок выходит за пределы экрана, то устанавливаем максимальные значения для ширины и высоты */
+        new_w = delta_w + point[0]; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+        new_h = delta_h + point[1]; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+        block.style.width = new_w + "px"; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+        block.style.height = new_h + "px"; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+        /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
         if (block.offsetLeft + block.clientWidth > clientWidth()) block.style.width = (clientWidth() - block.offsetLeft)  + "px";
         if (block.offsetTop + block.clientHeight > clientHeight()) block.style.height = (clientHeight() - block.offsetTop) + "px";
     }
     $(document).ready(function() {
-        $('.scrollbox').resizable();
+//        $('.scrollbox').resizable();
+        $(".scrollbox")
+                .wrap('<div/>')
+                .css({'overflow':'hidden'})
+                .parent()
+                .css({'display':'inline-block',
+                  'overflow':'hidden',
+                  'height':function(){return $('.scrollbox',this).height();},
+                  'width':  function(){return $('.scrollbox',this).width();},
+                  'paddingBottom':'12px',
+                  'paddingRight':'12px'
+
+                 }).resizable()
+                .find('.scrollbox')
+                .css({overflow:'auto',
+                            width:'100%',
+                            height:'100%'});
     });
 </script>
 <?php echo $footer; ?>

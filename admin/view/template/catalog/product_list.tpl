@@ -19,6 +19,7 @@
     <div class="content">
       <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form">
 	<input hidden id="page" value="<?php echo $page ?>">
+	<input hidden id="limit" value="<?php echo $limit ?>">
 	<input hidden id="sort" value="<?php echo $sort ?>">
 	<input hidden id="order" value="<?php echo $order ?>">
         <table class="list">
@@ -188,6 +189,8 @@ function filter() {
 
 	url += '&page=' + $('#page').val();
 
+    url += '&limit=' + $('#limit').val();
+
 	if ($('#sort').val()) {
 		url += '&sort=' + $('#sort').val();
 	}
@@ -297,6 +300,12 @@ $('.pagination .links a').live("click", function() {
 	filter();
 	return false;
 });
+    $('.pagination #list-limit').live("change", function() {
+        var limit = $( "#list-limit option:selected" ).text();
+        $('#limit').val(limit);
+        filter();
+        return false;
+    });
 
 $('#head a').live("click", function() {
 

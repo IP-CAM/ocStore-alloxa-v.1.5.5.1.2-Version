@@ -11,7 +11,11 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/shipping.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a onclick="location = '<?php echo $cancel; ?>';" class="button"><?php echo $button_cancel; ?></a></div>
+      <div class="buttons">
+          <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+          <a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a>
+          <a onclick="location = '<?php echo $cancel; ?>';" class="button"><?php echo $button_cancel; ?></a>
+      </div>
     </div>
     <div class="content">
       <div id="tabs" class="htabs"><a href="#tab-general"><?php echo $tab_general; ?></a><a href="#tab-data"><?php echo $tab_data; ?></a><a href="#tab-attribute"><?php echo $tab_attribute; ?></a><a href="#tab-option"><?php echo $tab_option; ?></a><a href="#tab-price"><?php echo $tab_price; ?></a><a href="#tab-action"><?php echo $tab_action; ?></a></div>

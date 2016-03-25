@@ -11,7 +11,11 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/information.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
+      <div class="buttons">
+          <a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
+          <a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a>
+          <a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a>
+      </div>
     </div>
     <div class="content">
       <div id="tabs" class="htabs"><a href="#tab-general"><?php echo $tab_general; ?></a><a href="#tab-data"><?php echo $tab_data; ?></a><a href="#tab-design"><?php echo $tab_design; ?></a></div>
@@ -232,7 +236,23 @@ $(document).ready(function() {
 //--></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('.scrollbox').resizable();
+//        $('.scrollbox').resizable();
+        $(".scrollbox")
+                .wrap('<div/>')
+                .css({'overflow':'hidden'})
+                .parent()
+                .css({'display':'inline-block',
+                  'overflow':'hidden',
+                  'height':function(){return $('.scrollbox',this).height();},
+                  'width':  function(){return $('.scrollbox',this).width();},
+                  'paddingBottom':'12px',
+                  'paddingRight':'12px'
+
+                 }).resizable()
+                .find('.scrollbox')
+                .css({overflow:'auto',
+                            width:'100%',
+                            height:'100%'});
     });
 </script>
 <?php echo $footer; ?>
