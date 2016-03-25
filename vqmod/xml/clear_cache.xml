@@ -1,0 +1,37 @@
+<modification>
+
+	<id>Clear Cache</id>
+	<version>0.1</version>
+	<vqmver>1.0.4</vqmver>
+	<author>Kyle Agronick</author>
+        <file name="admin/view/template/common/home.tpl">
+            <operation>
+                <search position="after"><![CDATA[
+                 <h1><img src="view/image/home.png" alt="" /> <?php echo $heading_title; ?></h1>    ]]>
+                </search>
+                <add><![CDATA[
+                   <div class='buttons'><a href="<?php echo $clear_cache ?>" class="button"><span>Очистить кеш</span></a></div>]]>
+                </add>
+            </operation>
+        </file>
+        <file name="admin/controller/common/home.php">
+            <operation>
+                <search position="before"><![CDATA[
+                 $file = DIR_CACHE . 'test';   ]]>
+                </search>
+                <add><![CDATA[
+                   $this->data['clear_cache'] = $this->url->link('common/home','token=' . $this->session->data['token'].'&clear_cache=true','SSL');
+                   if(isset($this->request->get['clear_cache'])){
+                   $iterator = new DirectoryIterator(DIR_CACHE);
+                   foreach($iterator as $file){
+                   if(!$file->isDot()){
+                        unlink($file->getPathname());
+                        }
+                   }
+                   }
+                   ]]>
+                </add>
+            </operation>
+        </file>
+        
+</modification>

@@ -1,32 +1,32 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://new.alloxa.com/admin/');
-define('HTTP_CATALOG', 'http://new.alloxa.com/');
+define('HTTP_SERVER', 'http://alloxa.local/admin/');
+define('HTTP_CATALOG', 'http://alloxa.local/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://new.alloxa.com/admin/');
-define('HTTPS_CATALOG', 'http://new.alloxa.com/');
+define('HTTPS_SERVER', 'http://alloxa.local/admin/');
+define('HTTPS_CATALOG', 'http://alloxa.local/');
 
-define('HTTP_IMAGE', 'http://new.alloxa.com/image/');
+define('HTTP_IMAGE', 'http://alloxa.local/image/');
 
 // DIR
-define('DIR_APPLICATION', 'D:\Alloxa\Sites\new.alloxa.com/admin/');
-define('DIR_SYSTEM', 'D:\Alloxa\Sites\new.alloxa.com/system/');
-define('DIR_DATABASE', 'D:\Alloxa\Sites\new.alloxa.com/system/database/');
-define('DIR_LANGUAGE', 'D:\Alloxa\Sites\new.alloxa.com/admin/language/');
-define('DIR_TEMPLATE', 'D:\Alloxa\Sites\new.alloxa.com/admin/view/template/');
-define('DIR_CONFIG', 'D:\Alloxa\Sites\new.alloxa.com/system/config/');
-define('DIR_IMAGE', 'D:\Alloxa\Sites\new.alloxa.com/image/');
-define('DIR_CACHE', 'D:\Alloxa\Sites\new.alloxa.com/system/cache/');
-define('DIR_DOWNLOAD', 'D:\Alloxa\Sites\new.alloxa.com/download/');
-define('DIR_LOGS', 'D:\Alloxa\Sites\new.alloxa.com/system/logs/');
-define('DIR_CATALOG', 'D:\Alloxa\Sites\new.alloxa.com/catalog/');
+define('DIR_APPLICATION', 'C:\OpenServer\domains\alloxa/admin/');
+define('DIR_SYSTEM', 'C:\OpenServer\domains\alloxa/system/');
+define('DIR_DATABASE', 'C:\OpenServer\domains\alloxa/system/database/');
+define('DIR_LANGUAGE', 'C:\OpenServer\domains\alloxa/admin/language/');
+define('DIR_TEMPLATE', 'C:\OpenServer\domains\alloxa/admin/view/template/');
+define('DIR_CONFIG', 'C:\OpenServer\domains\alloxa/system/config/');
+define('DIR_IMAGE', 'C:\OpenServer\domains\alloxa/image/');
+define('DIR_CACHE', 'C:\OpenServer\domains\alloxa/system/cache/');
+define('DIR_DOWNLOAD', 'C:\OpenServer\domains\alloxa/download/');
+define('DIR_LOGS', 'C:\OpenServer\domains\alloxa/system/logs/');
+define('DIR_CATALOG', 'C:\OpenServer\domains\alloxa/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysql');
-define('DB_HOSTNAME', '.');
-define('DB_USERNAME', 'alloxanewtest');
-define('DB_PASSWORD', 'JmtFyZPu');
-define('DB_DATABASE', 'alloxanewtest');
+define('DB_HOSTNAME', '212.109.223.89');
+define('DB_USERNAME', 'project_alloxa');
+define('DB_PASSWORD', 'z38EDj3GcXrfrDbB');
+define('DB_DATABASE', 'project_alloxa');
 define('DB_PREFIX', 'oc_');
 ?>

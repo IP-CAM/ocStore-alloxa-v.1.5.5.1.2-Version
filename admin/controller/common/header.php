@@ -23,6 +23,7 @@ class ControllerCommonHeader extends Controller {
 		
 		$this->data['text_affiliate'] = $this->language->get('text_affiliate');
 		$this->data['text_attribute'] = $this->language->get('text_attribute');
+		$this->data['text_attributic'] = $this->language->get('text_attributic');
 		$this->data['text_attribute_group'] = $this->language->get('text_attribute_group');
 		$this->data['text_backup'] = $this->language->get('text_backup');
 		$this->data['text_banner'] = $this->language->get('text_banner');
@@ -45,6 +46,7 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_extension'] = $this->language->get('text_extension');
 		$this->data['text_feed'] = $this->language->get('text_feed');
 		$this->data['text_filter'] = $this->language->get('text_filter');
+		$this->data['text_filterpro_mega'] = $this->language->get('text_filterpro_mega');
 		$this->data['text_front'] = $this->language->get('text_front');
 		$this->data['text_geo_zone'] = $this->language->get('text_geo_zone');
 		$this->data['text_dashboard'] = $this->language->get('text_dashboard');
@@ -59,7 +61,7 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_manager'] = $this->language->get('text_manager');
 		$this->data['text_manufacturer'] = $this->language->get('text_manufacturer'); 
 		$this->data["text_suppler"] = $this->language->get("text_suppler");  /*suppler*/		$this->data['text_module'] = $this->language->get('text_module');
-		$this->data['text_option'] = $this->language->get('text_option');
+		$this->data['text_optionar'] = $this->language->get('text_optionar');
 		$this->data['text_order'] = $this->language->get('text_order');
 		$this->data['text_order_status'] = $this->language->get('text_order_status');
 		$this->data['text_opencart'] = $this->language->get('text_opencart');
@@ -134,6 +136,7 @@ class ControllerCommonHeader extends Controller {
 			$this->data['error_log'] = $this->url->link('tool/error_log', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');	
 			$this->data['filter'] = $this->url->link('catalog/filter', 'token=' . $this->session->data['token'], 'SSL');			
+			$this->data['filterpro_mega'] = $this->url->link('module/filterpro', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['geo_zone'] = $this->url->link('localisation/geo_zone', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['information'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['information_category'] = $this->url->link('catalog/information_category', 'token=' . $this->session->data['token'], 'SSL');
@@ -145,6 +148,8 @@ class ControllerCommonHeader extends Controller {
 			$this->data['manufacturer'] = $this->url->link('catalog/manufacturer', 'token=' . $this->session->data['token'], 'SSL'); 
 		$this->data["suppler"] = $this->url->link("catalog/suppler", "token=" . $this->session->data["token"], "SSL");  /*suppler*/			$this->data['module'] = $this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['option'] = $this->url->link('catalog/option', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['optionar'] = $this->url->link('module/optionar', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['attributic'] = $this->url->link('module/attributic', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['order'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['order_status'] = $this->url->link('localisation/order_status', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['payment'] = $this->url->link('extension/payment', 'token=' . $this->session->data['token'], 'SSL');

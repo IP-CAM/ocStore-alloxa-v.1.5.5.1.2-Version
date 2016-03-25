@@ -1,0 +1,154 @@
+<modification>
+	<id>Product New Fields Info</id>
+	<version>1.0</version>
+	<vqmver>2.4.1</vqmver>
+	<author>Mogi Megantara</author>
+	<file name="admin/model/catalog/product.php">
+	<operation error="skip">
+		<search position="replace" index="1"><![CDATA[sku = '" . $this->db->escape($data['sku']) . "',]]></search>
+		<add><![CDATA[sku = '" . $this->db->escape($data['sku']) . "', entry_newfield1 = '" . $this->db->escape($data['entry_newfield1']) . "', newfield1 = '" . $this->db->escape($data['newfield1']) . "', entry_newfield2 = '" . $this->db->escape($data['entry_newfield2']) . "', newfield2 = '" . $this->db->escape($data['newfield2']) . "', entry_newfield3 = '" . $this->db->escape($data['entry_newfield3']) . "', newfield3 = '" . $this->db->escape($data['newfield3']) . "', ]]></add>
+	</operation>
+	<operation error="skip">
+		<search position="replace" index="2"><![CDATA[sku = '" . $this->db->escape($data['sku']) . "',]]></search>
+		<add><![CDATA[sku = '" . $this->db->escape($data['sku']) . "', entry_newfield1 = '" . $this->db->escape($data['entry_newfield1']) . "', newfield1 = '" . $this->db->escape($data['newfield1']) . "', entry_newfield2 = '" . $this->db->escape($data['entry_newfield2']) . "', newfield2 = '" . $this->db->escape($data['newfield2']) . "', entry_newfield3 = '" . $this->db->escape($data['entry_newfield3']) . "', newfield3 = '" . $this->db->escape($data['newfield3']) . "', ]]></add>
+	</operation>
+	<operation>
+		<search position="after" index="1" error="skip"><![CDATA[public function getProducts($data = array()) {]]></search>
+		<add><![CDATA[$exist = $this->db->query("SHOW COLUMNS FROM `" . DB_PREFIX . "product` WHERE Field = 'entry_newfield1'");
+		if (count($exist->row) == 0) {
+		$this->db->query("ALTER TABLE `" . DB_PREFIX . "product`
+		ADD COLUMN `entry_newfield1` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+		ADD COLUMN `newfield1` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+		ADD COLUMN `entry_newfield2` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+		ADD COLUMN `newfield2` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+		ADD COLUMN `entry_newfield3` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+		ADD COLUMN `newfield3` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+		");
+		}]]></add>
+	</operation>
+	</file>
+	<file name="admin/controller/catalog/product.php">
+	<operation error="skip">
+		<search position="after" offset="1"><![CDATA[$this->data['sku'] = '';]]></search>
+		<add><![CDATA[
+		if (isset($this->request->post['entry_newfield1'])) {
+      		$this->data['entry_newfield1'] = $this->request->post['entry_newfield1'];
+    	} elseif (!empty($product_info)) {
+			$this->data['entry_newfield1'] = $product_info['entry_newfield1'];
+		} else {
+      		$this->data['entry_newfield1'] = '';
+    	}
+		if (isset($this->request->post['newfield1'])) {
+      		$this->data['newfield1'] = $this->request->post['newfield1'];
+    	} elseif (!empty($product_info)) {
+			$this->data['newfield1'] = $product_info['newfield1'];
+		} else {
+      		$this->data['newfield1'] = '';
+    	}
+		if (isset($this->request->post['entry_newfield2'])) {
+      		$this->data['entry_newfield2'] = $this->request->post['entry_newfield2'];
+    	} elseif (!empty($product_info)) {
+			$this->data['entry_newfield2'] = $product_info['entry_newfield2'];
+		} else {
+      		$this->data['entry_newfield2'] = '';
+    	}
+		if (isset($this->request->post['newfield2'])) {
+      		$this->data['newfield2'] = $this->request->post['newfield2'];
+    	} elseif (!empty($product_info)) {
+			$this->data['newfield2'] = $product_info['newfield2'];
+		} else {
+      		$this->data['newfield2'] = '';
+    	}
+		if (isset($this->request->post['entry_newfield3'])) {
+      		$this->data['entry_newfield3'] = $this->request->post['entry_newfield3'];
+    	} elseif (!empty($product_info)) {
+			$this->data['entry_newfield3'] = $product_info['entry_newfield3'];
+		} else {
+      		$this->data['entry_newfield3'] = '';
+    	}
+		if (isset($this->request->post['newfield3'])) {
+      		$this->data['newfield3'] = $this->request->post['newfield3'];
+    	} elseif (!empty($product_info)) {
+			$this->data['newfield3'] = $product_info['newfield3'];
+		} else {
+      		$this->data['newfield3'] = '';
+    	}
+		]]></add>
+	</operation>
+	</file>
+	<file name="admin/view/template/catalog/product_form.tpl">
+	<operation error="skip">
+		<search position="after" offset="1"><![CDATA[<td><input type="text" name="sku" value="<?php echo $sku; ?>" /></td>]]></search>
+		<add><![CDATA[
+		<tr>
+              <td><input type="text" name="entry_newfield1" value="<?php echo $entry_newfield1; ?>" /><br /><span class="help">put entry name here</span></td>
+              <td><input type="text" name="newfield1" value="<?php echo $newfield1; ?>" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" name="entry_newfield2" value="<?php echo $entry_newfield2; ?>" /><br /><span class="help">put entry name here</span></td>
+              <td><input type="text" name="newfield2" value="<?php echo $newfield2; ?>" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" name="entry_newfield3" value="<?php echo $entry_newfield3; ?>" /><br /><span class="help">put entry name here</span></td>
+              <td><input type="text" name="newfield3" value="<?php echo $newfield3; ?>" /></td>
+            </tr>
+		]]></add>
+	</operation>
+	</file>
+	<file name="catalog/model/catalog/product.php">
+    <operation>
+        <search position="after">
+          	<![CDATA['viewed'           => $query->row['viewed']]]>
+            </search>
+        <add><![CDATA[
+		, 'entry_newfield1'           => $query->row['entry_newfield1'],
+		'newfield1'           => $query->row['newfield1'],
+		'entry_newfield2'           => $query->row['entry_newfield2'],
+		'newfield2'           => $query->row['newfield2'],
+		'entry_newfield3'           => $query->row['entry_newfield3'],
+		'newfield3'           => $query->row['newfield3']
+		]]></add>
+        </operation>
+	</file>
+	<file name="catalog/controller/product/product.php">
+    <operation>
+        <search position="after">
+          	<![CDATA[$this->data['reward'] = $product_info['reward'];]]>
+            </search>
+        <add><![CDATA[
+		$this->data['entry_newfield1'] = $product_info['entry_newfield1'];
+		$this->data['newfield1'] = $product_info['newfield1'];
+		$this->data['entry_newfield2'] = $product_info['entry_newfield2'];
+		$this->data['newfield2'] = $product_info['newfield2'];
+		$this->data['entry_newfield3'] = $product_info['entry_newfield3'];
+		$this->data['newfield3'] = $product_info['newfield3'];
+		]]></add>
+        </operation>
+	</file>
+	<file name="/catalog/view/theme/default/template/product/product.tpl">
+	   <operation error="skip">
+            <search position="before">
+            <![CDATA[<?php if ($reward) { ?>]]>
+            </search>
+            <add><![CDATA[
+			<?php if ($newfield1) { ?><span><?php echo $entry_newfield1; ?>:</span> <?php echo $newfield1; ?><br /><?php } ?>
+			<?php if ($newfield2) { ?><span><?php echo $entry_newfield2; ?>:</span> <?php echo $newfield2; ?><br /><?php } ?>
+			<?php if ($newfield3) { ?><span><?php echo $entry_newfield3; ?>:</span> <?php echo $newfield3; ?><br /><?php } ?>
+			]]>
+            </add>
+       </operation>
+	</file>
+	<file name="/catalog/view/theme/*/template/product/product.tpl">
+	   <operation error="skip">
+            <search position="before">
+            <![CDATA[<?php if ($reward) { ?>]]>
+            </search>
+            <add><![CDATA[
+			<?php if ($newfield1) { ?><span><?php echo $entry_newfield1; ?>:</span> <?php echo $newfield1; ?><br /><?php } ?>
+			<?php if ($newfield2) { ?><span><?php echo $entry_newfield2; ?>:</span> <?php echo $newfield2; ?><br /><?php } ?>
+			<?php if ($newfield3) { ?><span><?php echo $entry_newfield3; ?>:</span> <?php echo $newfield3; ?><br /><?php } ?>
+			]]>
+            </add>
+       </operation>
+	</file>
+</modification>

@@ -76,6 +76,7 @@
                 <?php } ?>
               </select></td>
             </tr>
+              <!--
             <tr>
               <td><?php echo $entry_filter; ?></td>
               <td><input type="text" name="filter" value="" /></td>
@@ -92,6 +93,7 @@
                   <?php } ?>
                 </div></td>
             </tr>
+            -->
             <tr>
               <td><?php echo $entry_store; ?></td>
               <td><div class="scrollbox">

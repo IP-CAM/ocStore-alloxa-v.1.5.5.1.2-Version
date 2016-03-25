@@ -77,14 +77,15 @@ $(document).ready(function(){
           <li><a href="<?php echo $category; ?>"><?php echo $text_category; ?></a></li>
           <li><a href="<?php echo $product; ?>"><?php echo $text_product; ?></a></li>
           <li><a href="index.php?route=module/batch_editor&token=<?php echo $this->session->data['token']; ?>">Пакетное редактирование товаров</a></li>
-          <li><a href="<?php echo $filter; ?>"><?php echo $text_filter; ?></a></li>
+          <li><a href="<?php echo $filterpro_mega; ?>"><?php echo $text_filter; ?> (mega)</a></li>
           <li><a class="parent"><?php echo $text_attribute; ?></a>
             <ul>
               <li><a href="<?php echo $attribute; ?>"><?php echo $text_attribute; ?></a></li>
+              <li><a href="<?php echo $attributic; ?>"><?php echo $text_attributic; ?></a></li>
               <li><a href="<?php echo $attribute_group; ?>"><?php echo $text_attribute_group; ?></a></li>
             </ul>
           </li>
-          <li><a href="<?php echo $option; ?>"><?php echo $text_option; ?></a></li>
+          <li><a href="<?php echo $optionar; ?>"><?php echo $text_optionar; ?></a></li>
           <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li> 
 		<li><a href="<?php echo $suppler; ?>"><?php echo $text_suppler; ?></a></li> <!--*suppler*-->          <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
           <li><a href="<?php echo $review; ?>"><?php echo $text_review; ?></a></li>

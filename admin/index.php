@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 'on');
+ini_set('log_errors', 1);
+ini_set('error_reporting', 1);
+ini_set('display_startup_errors', 'on');
 // Version
 define('VERSION', '1.5.5.1.2');
 

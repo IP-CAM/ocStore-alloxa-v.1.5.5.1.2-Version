@@ -72,6 +72,12 @@ class ControllerCatalogProduct extends Controller {
 		} else {
 			$page = 1;
 		}
+
+		if (isset($this->request->get['limit'])) {
+			$limit = $this->request->get['limit'];
+		} else {
+			$limit = $this->config->get('config_admin_limit');
+		}
 						
 		$url = '';
 						
@@ -114,6 +120,9 @@ class ControllerCatalogProduct extends Controller {
 		if (isset($this->request->get['order'])) {
 			$url .= '&order=' . $this->request->get['order'];
 		}
+		if (isset($this->request->get['limit'])) {
+			$url .= '&limit=' . $this->request->get['limit'];
+		}
 		
 		$data = array(
 			'filter_name'	  => $filter_name, 
@@ -125,8 +134,8 @@ class ControllerCatalogProduct extends Controller {
 			'filter_status'   => $filter_status,
 			'sort'            => $sort,
 			'order'           => $order,
-			'start'           => ($page - 1) * $this->config->get('config_admin_limit'),
-			'limit'           => $this->config->get('config_admin_limit')
+			'start'           => ($page - 1) * $limit,
+			'limit'           => $limit
 		);
 		
 		$this->load->model('tool/image');
@@ -181,7 +190,7 @@ class ControllerCatalogProduct extends Controller {
 		$pagination = new Pagination();
 		$pagination->total = $product_total;
 		$pagination->page = $page;
-		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->limit = $limit;
 		$pagination->text = $this->language->get('text_pagination');
 		$pagination->url = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 			
@@ -553,9 +562,16 @@ class ControllerCatalogProduct extends Controller {
 			$page = 1;
 		}
 
+		if (isset($this->request->get['limit'])) {
+			$limit = $this->request->get['limit'];
+		} else {
+			$limit = $this->config->get('config_admin_limit');
+		}
+
 		$this->data['sort'] = $sort;
 		$this->data['order'] = $order;
 		$this->data['page'] = $page;
+		$this->data['limit'] = $limit;
 
 		$url = '';
 
@@ -599,6 +615,10 @@ class ControllerCatalogProduct extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
+		if (isset($this->request->get['limit'])) {
+			$url .= '&limit=' . $this->request->get['limit'];
+		}
+
   		$this->data['breadcrumbs'] = array();
 
    		$this->data['breadcrumbs'][] = array(
@@ -629,8 +649,8 @@ class ControllerCatalogProduct extends Controller {
 			'filter_status'   => $filter_status,
 			'sort'            => $sort,
 			'order'           => $order,
-			'start'           => ($page - 1) * $this->config->get('config_admin_limit'),
-			'limit'           => $this->config->get('config_admin_limit')
+			'start'           => ($page - 1) * $limit,
+			'limit'           => $limit
 		);
 		
 		$this->load->model('tool/image');
@@ -808,7 +828,7 @@ class ControllerCatalogProduct extends Controller {
 		$pagination = new Pagination();
 		$pagination->total = $product_total;
 		$pagination->page = $page;
-		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->limit = $limit;
 		$pagination->text = $this->language->get('text_pagination');
 		$pagination->url = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 			
@@ -899,7 +919,7 @@ class ControllerCatalogProduct extends Controller {
     	$this->data['entry_image'] = $this->language->get('entry_image');
     	$this->data['entry_download'] = $this->language->get('entry_download');
     	$this->data['entry_category'] = $this->language->get('entry_category');
-		$this->data['entry_filter'] = $this->language->get('entry_filter');
+		//$this->data['entry_filter'] = $this->language->get('entry_filter');
 		$this->data['entry_related'] = $this->language->get('entry_related');
 		$this->data['entry_attribute'] = $this->language->get('entry_attribute');
 		$this->data['entry_text'] = $this->language->get('entry_text');
@@ -1171,7 +1191,8 @@ class ControllerCatalogProduct extends Controller {
 		}
 		
 		$this->load->model('tool/image');
-		
+
+		$this->data['hide_image'] = $product_info['hide_image'];
 		if (isset($this->request->post['image']) && file_exists(DIR_IMAGE . $this->request->post['image'])) {
 			$this->data['thumb'] = $this->model_tool_image->resize($this->request->post['image'], 100, 100);
 		} elseif (!empty($product_info) && $product_info['image'] && file_exists(DIR_IMAGE . $product_info['image'])) {
@@ -1405,7 +1426,7 @@ class ControllerCatalogProduct extends Controller {
 		}
 		
 		$this->data['product_filters'] = array();
-		
+		/*
 		foreach ($filters as $filter_id) {
 			$filter_info = $this->model_catalog_filter->getFilter($filter_id);
 			
@@ -1416,7 +1437,7 @@ class ControllerCatalogProduct extends Controller {
 				);
 			}
 		}		
-		
+		*/
 		// Attributes
 		$this->load->model('catalog/attribute');
 		
