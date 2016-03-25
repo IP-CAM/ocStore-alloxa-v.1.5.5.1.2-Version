@@ -12,6 +12,7 @@ class ControllerCommonHome extends Controller {
 				$this->db->query("ALTER TABLE " . DB_PREFIX . "product ADD locked_editing tinyint(1) NOT NULL;");    
 				} 
                
+
     	$this->language->load('common/home');
 	 
 		$this->document->setTitle($this->language->get('heading_title'));

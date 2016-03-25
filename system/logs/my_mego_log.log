@@ -5724,3 +5724,218 @@
                 attribute_id int(11) NOT NULL,
 				category_id int(11) NOT NULL
                 ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:37:48 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:37:52 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:39:16 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:39:27 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:40:00 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:2) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:40:01 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:40:23 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:41:25 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:41:34 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:41:53 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:67) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:41:53 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:42:04 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:102) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:42:04 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:42:13 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:42:14 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:42:19 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:42:20 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:42:26 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:42:26 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:42:32 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:42:32 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:42:38 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:42:38 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:42:44 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:42:45 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:42:51 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:42:51 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:42:57 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:42:57 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:42:59 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:43:00 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:43:50 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:43:50 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:45:22 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:45:22 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:45:36 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:45:37 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:46:23 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:46:23 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:46:31 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:46:31 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:47:07 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:47:08 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:49:54 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:49:54 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:51:23 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:51:23 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:51:36 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:51:36 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:51:57 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:51:58 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:52:05 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:52:05 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:52:27 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:52:27 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:52:36 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:52:36 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:53:03 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:53:03 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:54:17 - PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at C:\OpenServer\domains\alloxa\admin\index.php:111) in C:\OpenServer\domains\alloxa\system\library\session.php on line 16
+2016-03-25 15:54:17 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:55:44 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:56:33 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 15:56:43 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 16:01:48 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 16:02:37 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 16:03:47 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 16:04:17 - PHP Notice:  Error: CREATE command denied to user 'project_alloxa'@'188.163.70.182' for table 'oc_attributes_category'<br />Error No: 1142<br />CREATE TABLE IF NOT EXISTS oc_attributes_category (
+                attribute_id int(11) NOT NULL,
+				category_id int(11) NOT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8; in C:\OpenServer\domains\alloxa\system\database\mysql.php on line 50
+2016-03-25 16:07:20 - PHP Warning:  fopen(C:/OpenServer/domains/alloxa/image/test): failed to open stream: No such file or directory in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 60
+2016-03-25 16:07:20 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 62
+2016-03-25 16:07:20 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 64
+2016-03-25 16:07:20 - PHP Warning:  sprintf(): Too few arguments in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 67
+2016-03-25 16:07:20 - PHP Warning:  fopen(C:/OpenServer/domains/alloxa/image/cache/test): failed to open stream: No such file or directory in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 77
+2016-03-25 16:07:20 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 79
+2016-03-25 16:07:20 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 81
+2016-03-25 16:07:20 - PHP Warning:  sprintf(): Too few arguments in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 84
+2016-03-25 16:07:20 - PHP Warning:  fopen(C:/OpenServer/domains/alloxa/download/test): failed to open stream: No such file or directory in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 123
+2016-03-25 16:07:20 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 125
+2016-03-25 16:07:20 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 127
+2016-03-25 16:07:20 - PHP Warning:  sprintf(): Too few arguments in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 130
+2016-03-25 16:07:45 - PHP Warning:  fopen(C:/OpenServer/domains/alloxa/image/test): failed to open stream: No such file or directory in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 60
+2016-03-25 16:07:45 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 62
+2016-03-25 16:07:45 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 64
+2016-03-25 16:07:45 - PHP Warning:  sprintf(): Too few arguments in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 67
+2016-03-25 16:07:45 - PHP Warning:  fopen(C:/OpenServer/domains/alloxa/image/cache/test): failed to open stream: No such file or directory in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 77
+2016-03-25 16:07:45 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 79
+2016-03-25 16:07:45 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 81
+2016-03-25 16:07:45 - PHP Warning:  sprintf(): Too few arguments in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 84
+2016-03-25 16:07:45 - PHP Warning:  fopen(C:/OpenServer/domains/alloxa/download/test): failed to open stream: No such file or directory in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 123
+2016-03-25 16:07:45 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 125
+2016-03-25 16:07:45 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 127
+2016-03-25 16:07:45 - PHP Warning:  sprintf(): Too few arguments in C:\OpenServer\domains\alloxa\vqmod\vqcache\vq2-admin_controller_common_home.php on line 130

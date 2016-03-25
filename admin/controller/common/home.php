@@ -1,6 +1,7 @@
 <?php   
 class ControllerCommonHome extends Controller {   
 	public function index() {
+
     	$this->language->load('common/home');
 	 
 		$this->document->setTitle($this->language->get('heading_title'));
