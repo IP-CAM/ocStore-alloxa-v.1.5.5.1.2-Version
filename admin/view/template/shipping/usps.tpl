@@ -235,7 +235,8 @@
                   <?php } ?>
                 </div>
               </div>
-              <a onclick="$(this).parent().find(':checkbox').attr('checked', true);"><?php echo $text_select_all; ?></a> / <a onclick="$(this).parent().find(':checkbox').attr('checked', false);"><?php echo $text_unselect_all; ?></a></td>
+                <div>
+              <a onclick="$(this).parent().find(':checkbox').attr('checked', true);"><?php echo $text_select_all; ?></a> / <a onclick="$(this).parent().find(':checkbox').attr('checked', false);"><?php echo $text_unselect_all; ?></a></td></div>
           </tr>
           <tr>
             <td><?php echo $entry_international; ?></td>
@@ -386,7 +387,8 @@
                   <?php } ?>
                 </div>
               </div>
-              <a onclick="$(this).parent().find(':checkbox').attr('checked', true);"><?php echo $text_select_all; ?></a> / <a onclick="$(this).parent().find(':checkbox').attr('checked', false);"><?php echo $text_unselect_all; ?></a></td>
+                <div>
+              <a onclick="$(this).parent().find(':checkbox').attr('checked', true);"><?php echo $text_select_all; ?></a> / <a onclick="$(this).parent().find(':checkbox').attr('checked', false);"><?php echo $text_unselect_all; ?></a></td></div>
           </tr>
           <tr>
             <td><?php echo $entry_size; ?></td>
@@ -542,7 +544,23 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('.scrollbox').resizable();
+//        $('.scrollbox').resizable();
+        $(".scrollbox")
+                .wrap('<div/>')
+                .css({'overflow':'hidden'})
+                .parent()
+                .css({'display':'inline-block',
+                  'overflow':'hidden',
+                  'height':function(){return $('.scrollbox',this).height();},
+                  'width':  function(){return $('.scrollbox',this).width();},
+                  'paddingBottom':'12px',
+                  'paddingRight':'12px'
+
+                 }).resizable()
+                .find('.scrollbox')
+                .css({overflow:'auto',
+                            width:'100%',
+                            height:'100%'});
     });
 </script>
 <?php echo $footer; ?>

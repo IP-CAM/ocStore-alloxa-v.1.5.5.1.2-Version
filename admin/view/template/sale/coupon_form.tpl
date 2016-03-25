@@ -285,7 +285,23 @@ $('#tabs a').tabs();
 //--></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('.scrollbox').resizable();
+//        $('.scrollbox').resizable();
+        $(".scrollbox")
+                .wrap('<div/>')
+                .css({'overflow':'hidden'})
+                .parent()
+                .css({'display':'inline-block',
+                  'overflow':'hidden',
+                  'height':function(){return $('.scrollbox',this).height();},
+                  'width':  function(){return $('.scrollbox',this).width();},
+                  'paddingBottom':'12px',
+                  'paddingRight':'12px'
+
+                 }).resizable()
+                .find('.scrollbox')
+                .css({overflow:'auto',
+                            width:'100%',
+                            height:'100%'});
     });
 </script>
 <?php echo $footer; ?>

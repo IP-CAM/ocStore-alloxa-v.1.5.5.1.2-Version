@@ -76,6 +76,7 @@
                 <?php } ?>
               </select></td>
             </tr>
+              <!--
             <tr>
               <td><?php echo $entry_filter; ?></td>
               <td><input type="text" name="filter" value="" /></td>
@@ -92,6 +93,7 @@
                   <?php } ?>
                 </div></td>
             </tr>
+            -->
             <tr>
               <td><?php echo $entry_store; ?></td>
               <td><div class="scrollbox">
@@ -421,7 +423,23 @@ $('#languages a').tabs();
         if (block.offsetTop + block.clientHeight > clientHeight()) block.style.height = (clientHeight() - block.offsetTop) + "px";
     }
     $(document).ready(function() {
-        $('.scrollbox').resizable();
+//        $('.scrollbox').resizable();
+        $(".scrollbox")
+                .wrap('<div/>')
+                .css({'overflow':'hidden'})
+                .parent()
+                .css({'display':'inline-block',
+                  'overflow':'hidden',
+                  'height':function(){return $('.scrollbox',this).height();},
+                  'width':  function(){return $('.scrollbox',this).width();},
+                  'paddingBottom':'12px',
+                  'paddingRight':'12px'
+
+                 }).resizable()
+                .find('.scrollbox')
+                .css({overflow:'auto',
+                            width:'100%',
+                            height:'100%'});
     });
 </script>
 <?php echo $footer; ?>
