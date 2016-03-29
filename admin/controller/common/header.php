@@ -60,7 +60,8 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_contact'] = $this->language->get('text_contact');
 		$this->data['text_manager'] = $this->language->get('text_manager');
 		$this->data['text_manufacturer'] = $this->language->get('text_manufacturer'); 
-		$this->data["text_suppler"] = $this->language->get("text_suppler");  /*suppler*/		$this->data['text_module'] = $this->language->get('text_module');
+		//$this->data["text_suppler"] = $this->language->get("text_suppler");  /*suppler*/
+		$this->data['text_module'] = $this->language->get('text_module');
 		$this->data['text_optionar'] = $this->language->get('text_optionar');
 		$this->data['text_order'] = $this->language->get('text_order');
 		$this->data['text_order_status'] = $this->language->get('text_order_status');
@@ -146,7 +147,8 @@ class ControllerCommonHeader extends Controller {
 			$this->data['contact'] = $this->url->link('sale/contact', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['manager'] = $this->url->link('extension/manager', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['manufacturer'] = $this->url->link('catalog/manufacturer', 'token=' . $this->session->data['token'], 'SSL'); 
-		$this->data["suppler"] = $this->url->link("catalog/suppler", "token=" . $this->session->data["token"], "SSL");  /*suppler*/			$this->data['module'] = $this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL');
+		//$this->data["suppler"] = $this->url->link("catalog/suppler", "token=" . $this->session->data["token"], "SSL");  /*suppler*/
+			$this->data['module'] = $this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['option'] = $this->url->link('catalog/option', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['optionar'] = $this->url->link('module/optionar', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['attributic'] = $this->url->link('module/attributic', 'token=' . $this->session->data['token'], 'SSL');

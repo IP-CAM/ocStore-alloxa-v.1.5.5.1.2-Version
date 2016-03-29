@@ -392,10 +392,20 @@ class ControllerCatalogSuppler extends Controller {
 			$url .= '&order=' . $this->request->get['order'];
 		}
 
+		if (isset($this->request->get['limit'])) {
+			$limit = $this->request->get['limit'];
+		} else {
+			$limit = $this->config->get('config_admin_limit');
+		}
+
+		if (isset($this->request->get['limit'])) {
+			$url .= '&limit=' . $this->request->get['limit'];
+		}
+
 		$pagination = new Pagination();
 		$pagination->total = $suppler_total;
 		$pagination->page = $page;
-		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->limit = $limit;
 		$pagination->text = $this->language->get('text_pagination');
 		$pagination->url = $this->url->link('catalog/suppler', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 			
@@ -669,6 +679,16 @@ class ControllerCatalogSuppler extends Controller {
 			
 		if (isset($this->request->get['page'])) {
 			$url .= '&page=' . $this->request->get['page'];
+		}
+
+		if (isset($this->request->get['limit'])) {
+			$limit = $this->request->get['limit'];
+		} else {
+			$limit = $this->config->get('config_admin_limit');
+		}
+
+		if (isset($this->request->get['limit'])) {
+			$url .= '&limit=' . $this->request->get['limit'];
 		}
 		
 		if (isset($this->request->get['sort'])) {
@@ -1757,7 +1777,7 @@ class ControllerCatalogSuppler extends Controller {
 		$pagination = new Pagination();
 		$pagination->total = $data_total;
 		$pagination->page = $page;
-		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->limit = $limit;
 		$pagination->text = $this->language->get('text_pagination');
 		$pagination->url = $this->url->link('catalog/suppler', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 			

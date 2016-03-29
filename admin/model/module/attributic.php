@@ -30,6 +30,22 @@ class ModelModuleAttributic extends Model {
 		$this->db->query("UPDATE " . DB_PREFIX . "setting SET `value` = " . (int)$data['settings']['template_id'] . " + 1 WHERE `store_id` = 0 AND `group` = 'attributic' AND `key` = 'active'");
 	}
 
+	public function addTemplateFromProduct($data) {
+		$d = $this->db->query("SELECT `value` FROM " . DB_PREFIX . "setting WHERE `store_id` = 0 AND `group` = 'attributic' AND `key` = 'active'");
+
+		$dat['settings']['title'] = "Новый шаблон на основе " . $d->row['value'];
+		$dat['settings']['template_id'] = $d->row['value'];
+
+		foreach($data['product_attribute'] as $v){
+			$dat['settings']['selected'][$v['attribute_id']] = $v['attribute_id'];
+			$dat['settings']['attribute_description'][$v['attribute_id']][1] = $v['product_attribute_description'][1]['text'];
+		}
+		$this->db->query("INSERT INTO " . DB_PREFIX . "setting SET `store_id` = 0, `group` = 'attributic', `key` = '" . (int)$dat['settings']['template_id'] . "', `value` = '" . $this->db->escape(serialize($dat['settings'])) . "', `serialized` = 1");
+
+		$this->db->query("UPDATE " . DB_PREFIX . "setting SET `value` = " . (int)$dat['settings']['template_id'] . " + 1 WHERE `store_id` = 0 AND `group` = 'attributic' AND `key` = 'active'");
+
+	}
+
 	public function saveTemplate($data) {
 		$this->db->query("UPDATE " . DB_PREFIX . "setting SET `value` = '" . $this->db->escape(serialize($data['settings'])) . "' WHERE `key` = '" . (int)$data['settings']['template_id'] . "' AND `store_id` = 0 AND `group` = 'attributic'");
 

@@ -59,12 +59,16 @@ class ControllerModuleFeatured extends Controller {
 				} else {
 					$rating = false;
 				}
-					
+
+				$date_add = new DateTime($product_info['date_added']);
+				$date_add = $date_add->modify("+10 days")->diff(new DateTime());
+
 				$this->data['products'][] = array(
 					'product_id' => $product_info['product_id'],
 					'thumb'   	 => $image,
 					'name'    	 => $product_info['name'],
 					'model'		 => $product_info['model'],
+					'tag-prod' 	 => (intval($date_add->format('%R%a'))<0 ? true : false),
 					'price'   	 => $price,
 					'special' 	 => $special,
 					'rating'     => $rating,

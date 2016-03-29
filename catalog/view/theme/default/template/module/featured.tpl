@@ -56,9 +56,11 @@
           
             <li style="text-align: left;">
                 <a href="<?php echo $product['href']; ?>" class="avatar">
-                    <!-- <div class="tag-prod">
-                        <span>Хит продаж</span>
-                    </div> -->
+                    <?php if($product['tag-prod']) { ?>
+                        <div class="tag-prod">
+                            <span>Хит продаж</span>
+                        </div>
+                    <?php }?>
                     <?php if ($product['thumb']) { ?>
                     <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" />
                     <?php } ?>

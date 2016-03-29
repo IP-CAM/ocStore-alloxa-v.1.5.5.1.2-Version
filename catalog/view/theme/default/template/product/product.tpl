@@ -314,7 +314,6 @@
      
 
     </div>
-
      <!--  <?php if ($review_status) { ?>
       <div class="review">
         <div><img src="catalog/view/theme/default/image/stars-<?php echo $rating; ?>.png" alt="<?php echo $reviews; ?>" />&nbsp;&nbsp;<a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $reviews; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $text_write; ?></a></div>
@@ -326,8 +325,47 @@
       <?php } ?> -->
     </div>
   </div>
-
-  <script>
+<div class="accessories">
+  <div class="title-box">Аксессуары к этому товару</div>
+</div>
+<div id="filter_group_prods">
+  <span data-cat="0" class="active">Все</span>
+  <span data-cat="1265">Чехлы для смартфонов</span>
+  <span data-cat="1266">Пленки для смартфонов</span>
+  <span data-cat="1267">Зарядные устройства и адаптеры</span>
+  <span data-cat="1562">Аксессуары Apple</span>
+</div>
+<div id="prods" class="products prods slick-initialized slick-slider">
+  <div class="slick-list draggable" tabindex="0">
+    <div class="slick-track" style="opacity: 1; width: 11245px; transform: translate3d(-692px, 0px, 0px);">
+      <div class="product slick-slide slick-active" data-cat="1265" style="width: 173px;">
+        <div class="wrap-prod">
+          <a href="/catalog/7356-plastikovyy-chekhol-apple-iphone-5-0,3mm-white" class="avatar">
+            <img src="http://files.alloxa.com/products/0/7356/7356avatar1411563239.jpg" alt="Защитный чехол для Apple iPhone 5 0,3mm белый" title="Защитный чехол для Apple iPhone 5 0,3mm белый"></a>
+          <a href="/catalog/7356-plastikovyy-chekhol-apple-iphone-5-0,3mm-white" class="title">Защитный чехол для Apple iPhone 5 0,3mm белый</a>
+          <div class="prise-box">
+            <div class="prise">Цена: 53
+              <span class="hrn">грн.</span>
+              <div class="usd">$2
+              </div>
+            </div>
+            <div class="buy-box">
+              <button class="buy buyList" value="7356" rel="7356">Купить</button>
+              <div style="display:none">
+                <input type="text" name="qty" value="1" size="3" class="number">
+              </div>
+              <div class="loader" id="" style="display:none">
+                <img src="http://alloxa.com/images/loader.gif">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="slick-prev" style="display: block;">Previous</button>
+  <button type="button" class="slick-next" style="display: block;">Next</button></div>
+<script>
   $(document).ready(function() {
     $('td').each(function (i) {
       var my = $(this).html()

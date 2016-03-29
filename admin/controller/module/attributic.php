@@ -99,6 +99,11 @@ class ControllerModuleAttributic extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 
+	public function addTemplateFromProduct() {
+		$this->load->model('module/attributic');
+		$this->model_module_attributic->addTemplateFromProduct($this->request->post);
+	}
+
 	public function saveTemplate() {
 		$this->load->language('module/attributic');
 
@@ -147,6 +152,7 @@ class ControllerModuleAttributic extends Controller {
 		$this->data['text_select'] = $this->language->get('text_select');
 		$this->data['text_delete_all'] = $this->language->get('text_delete_all');
 		$this->data['text_delete_empty'] = $this->language->get('text_delete_empty');
+		$this->data['text_create_templates'] = $this->language->get('text_create_templates');
 
 		$this->data['modules'] = array();
 		
