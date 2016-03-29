@@ -209,5 +209,11 @@ $('input[name=\'filter_customer\']').catcomplete({
       	return false;
    	}
 });
+  $('.pagination #list-limit').live("change", function() {
+    var limit = $( "#list-limit option:selected" ).text();
+    $('#limit').val(limit);
+    filter();
+    return false;
+  });
 //--></script> 
 <?php echo $footer; ?>

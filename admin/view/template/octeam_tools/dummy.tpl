@@ -11,7 +11,7 @@
 	<div class="box">
 		<div class="heading">
 			<h1><img src="view/image/octeam/tool/<?php echo $tool; ?>.png" alt="<?php echo $tool; ?>" width="22" height="22" /> <?php echo $heading_title; ?></h1>
-			<div class="buttons">
+			<div class="buttons" id="button-L">
 				<a onclick="$('#form').submit();" class="button"><?php echo $button_apply; ?></a>
 				<a onclick="$('#form').submit();" class="button"><span><?php echo $button_save; ?></span></a>
 				<a onclick="location = '<?php echo $cancel; ?>';" class="button"><span><?php echo $button_cancel; ?></span></a>

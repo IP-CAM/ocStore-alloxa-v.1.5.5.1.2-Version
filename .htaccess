@@ -1,4 +1,3 @@
-php_flag display_errors On
 <FilesMatch "\.(tpl|ini|log)">
  Order deny,allow
  Deny from all

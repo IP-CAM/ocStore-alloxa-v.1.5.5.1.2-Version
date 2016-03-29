@@ -11,7 +11,7 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/product.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><?php if (isset($preview)) { ?>
+      <div class="buttons" id="button-L"><?php if (isset($preview)) { ?>
           <a target="_blank" href="<?php echo str_replace('admin/', '', $preview); ?>" class="button">Просмотр на сайте</a>
           <?php } ?><?php if (isset($update)) { ?>
           <a onclick="updateProduct();" class="button"><?php echo $button_apply; ?></a><?php } ?>
@@ -1624,6 +1624,21 @@ $('#vtab-option a').tabs();
                     $('#vtab-option').children(i).remove();
                     $(this).remove();
                     $('#vtab-option').children('a:first-child').trigger('click');
+                }
+            });
+        }
+    });
+
+    $('#create_templates').live('click', function() {
+        if (!confirm('На основе вееденых данных создаться новый шаблон атрибутов')) {
+            return false;
+        } else {
+            $.ajax({
+                url: 'index.php?route=module/attributic/addTemplateFromProduct&token=<?php echo $token; ?>',
+                type: 'post',
+                data: $('#form').serializeArray(),
+                success: function(html) {
+                    $('#tab-attribute div div').append('<span></span>');
                 }
             });
         }

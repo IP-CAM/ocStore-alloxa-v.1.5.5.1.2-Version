@@ -199,7 +199,7 @@ class ControllerCheckoutSimpleCheckout extends Controller {
                 
                 $this->request->server['REQUEST_METHOD'] = 'GET';
                 
-                $this->data['payment_form'] = $this->getChild('payment/' . $payment_method['code']);
+                $this->data['payment_form'] = false; //$this->getChild('payment/' . $payment_method['code']); off instructions
             }
             
             $this->data['simple_step'] = '';

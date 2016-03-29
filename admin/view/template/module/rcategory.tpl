@@ -11,7 +11,7 @@
 <div class="box">
   <div class="heading">
     <h1><img src="view/image/module.png" alt="" /> <?php echo $heading_title; ?></h1>
-    <div class="buttons">
+    <div class="buttons" id="button-L">
 		<?php if (!$is_installed) { ?>
 			<a onclick="location='<?php echo $create; ?>';" class="button"><span><?php echo $button_create; ?></span></a>
 		<?php } ?>

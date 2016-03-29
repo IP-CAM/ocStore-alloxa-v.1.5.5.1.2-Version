@@ -31,6 +31,7 @@ class ModelCatalogProduct extends Model {
 		
 		if ($query->num_rows) {
 			return array(
+				'hide_image'       => $query->row['hide_image'],
 				'product_color'	   => $query->row['product_color_value'],
 				'product_memory'   => $query->row['product_memory_value'],
 				'seo_title'        => $query->row['seo_title'],
@@ -74,8 +75,7 @@ class ModelCatalogProduct extends Model {
 				'status'           => $query->row['status'],
 				'date_added'       => $query->row['date_added'],
 				'date_modified'    => $query->row['date_modified'],
-				'viewed'           => $query->row['viewed'],
-				'hide_image'        => $query->row['hide_image']
+				'viewed'           => $query->row['viewed']
 			);
 		} else {
 			return false;

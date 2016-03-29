@@ -240,10 +240,20 @@ class ControllerCatalogInformationCategory extends Controller {
 			$url .= '&order=' . $this->request->get['order'];
 		}
 
+		if (isset($this->request->get['limit'])) {
+			$limit = $this->request->get['limit'];
+		} else {
+			$limit = $this->config->get('config_admin_limit');
+		}
+
+		if (isset($this->request->get['limit'])) {
+			$url .= '&limit=' . $this->request->get['limit'];
+		}
+
 		$pagination = new Pagination();
 		$pagination->total = $information_category_total;
 		$pagination->page = $page;
-		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->limit = $limit;
 		$pagination->text = $this->language->get('text_pagination');
 		$pagination->url = $this->url->link('catalog/information_category', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 			

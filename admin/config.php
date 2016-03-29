@@ -25,9 +25,9 @@ define('DIR_CATALOG', 'C:/OpenServer/domains/alloxa/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysql');
-define('DB_HOSTNAME', '212.109.223.89');
-define('DB_USERNAME', 'project_alloxa');
-define('DB_PASSWORD', 'z38EDj3GcXrfrDbB');
+define('DB_HOSTNAME', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
 define('DB_DATABASE', 'project_alloxa');
 define('DB_PREFIX', 'oc_');
 ?>

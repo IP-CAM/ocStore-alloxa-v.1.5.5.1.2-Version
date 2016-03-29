@@ -130,11 +130,22 @@ class ControllerReportProductPurchased extends Controller {
 		} 
 		if (isset($this->request->get["filter_model"])) {
 			$url .= "&filter_model =" . $this->request->get["filter_model"];
-		} /*suppler*/		
+		} /*suppler*/
+
+		if (isset($this->request->get['limit'])) {
+			$limit = $this->request->get['limit'];
+		} else {
+			$limit = $this->config->get('config_admin_limit');
+		}
+
+		if (isset($this->request->get['limit'])) {
+			$url .= '&limit=' . $this->request->get['limit'];
+		}
+
 		$pagination = new Pagination();
 		$pagination->total = $product_total;
 		$pagination->page = $page;
-		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->limit = $limit;
 		$pagination->text = $this->language->get('text_pagination');
 		$pagination->url = $this->url->link('report/product_purchased', 'token=' . $this->session->data['token'] . $url . '&page={page}');
 			

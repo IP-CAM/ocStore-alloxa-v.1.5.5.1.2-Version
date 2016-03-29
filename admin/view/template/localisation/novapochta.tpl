@@ -14,7 +14,7 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/log.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons">
+      <div class="buttons" id="button-L">
 		<a href="<?php echo $clear; ?>" class="button"><?php echo $button_clear; ?></a>
 		</div>
     </div>

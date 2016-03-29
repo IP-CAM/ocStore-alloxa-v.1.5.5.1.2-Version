@@ -36,7 +36,7 @@ include $simple->tpl_static();
             
             if ($simple_common_view_help_text && isset($help_title) && isset($help_text)) {
                 $replace['{help}'] = '<div class="simplecheckout-block" id="simplecheckout_help">';
-                $replace['{help}'] .= '<div class="simplecheckout-block-heading">' . $help_title . '</div>';
+                $replace['{help}'] .= '<div class="simplecheckout-block-heading">11111' . $help_title . '</div>';
                 $replace['{help}'] .= '<div class="simplecheckout-block-content simplecheckout-scroll">' . $help_text . '</div>';
                 $replace['{help}'] .= '</div>';
             }
