@@ -1635,8 +1635,7 @@
             _.$prevArrow.remove();
             _.$nextArrow.remove();
         }
-        _.$slides.removeClass(
-            'slick-slide slick-active slick-visible').removeAttr('style');
+        _.$slides.removeClass('slick-slide slick-active slick-visible').removeAttr('style');
 
     };
 

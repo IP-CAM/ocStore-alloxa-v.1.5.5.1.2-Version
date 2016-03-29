@@ -465,7 +465,7 @@ class ControllerProductProduct extends Controller {
 			$this->data['products'] = array();
 			
 			$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);
-			
+
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_related_width'), $this->config->get('config_image_related_height'));
@@ -490,9 +490,14 @@ class ControllerProductProduct extends Controller {
 				} else {
 					$rating = false;
 				}
+                if($result['category_id'] != 0){
+                    $cat = $this->model_catalog_category->getCategory($result['category_id']);
+                    $this->data['related']['cat'][$result['category_id']] = $cat['name'];
+                }
 							
 				$this->data['products'][] = array(
 					'product_id' => $result['product_id'],
+					'category_id'=> $result['category_id'],
 					'thumb'   	 => $image,
 					'name'    	 => $result['name'],
 					'price'   	 => $price,

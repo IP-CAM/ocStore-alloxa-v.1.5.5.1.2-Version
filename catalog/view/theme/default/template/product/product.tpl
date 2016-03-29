@@ -314,7 +314,6 @@
      
 
     </div>
-
      <!--  <?php if ($review_status) { ?>
       <div class="review">
         <div><img src="catalog/view/theme/default/image/stars-<?php echo $rating; ?>.png" alt="<?php echo $reviews; ?>" />&nbsp;&nbsp;<a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $reviews; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $text_write; ?></a></div>
@@ -326,8 +325,50 @@
       <?php } ?> -->
     </div>
   </div>
-
-  <script>
+<?php  if ($products) { ?>
+<div style="max-width: 720px">
+<div class="accessories">
+  <div class="title-box">Аксессуары к этому товару</div>
+</div>
+<div id="filter_group_prods">
+  <span data-cat="0" class="active">Все</span>
+  <?php if($related){ ?>
+  <?php foreach ($related['cat'] as $cat => $val ) { ?>
+  <span data-cat="<?php echo $cat; ?>"><?php echo $val; ?></span>
+  <?php } ?>
+  <?php } ?>
+</div>
+<div id="prods" class="products prods">
+      <?php foreach ($products as $product) { ?>
+      <div class="product" data-cat="<?php echo $product['category_id']; ?>" style="width: 173px;">
+        <div class="wrap-prod">
+          <?php if ($product['thumb']) { ?>
+          <a href="<?php echo $product['href']; ?>" class="avatar">
+            <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>">
+          </a>
+          <?php } ?>
+          <a href="<?php echo $product['href']; ?>" class="title"><?php echo $product['name']; ?></a>
+          <div class="prise-box">
+            <?php if ($product['price']) { ?>
+            <div class="prise">Цена: <?php echo $product['price']; ?></div>
+            <?php }?>
+            <div class="buy-box">
+              <button class="buy buyList" value="<?php echo $product['product_id']; ?>" rel="<?php echo $product['product_id']; ?>">Купить</button>
+              <div style="display:none">
+                <input type="text" name="qty" value="1" size="3" class="number">
+              </div>
+              <div class="loader" id="loader<?php echo $product['product_id']; ?>" style="display:none">
+                <img src="http://alloxa.com/images/loader.gif">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php } ?>
+    </div>
+  </div>
+<?php } ?>
+<script>
   $(document).ready(function() {
     $('td').each(function (i) {
       var my = $(this).html()
@@ -340,35 +381,22 @@
         $(this).html('')
       }
     });
+    $('#prods').slick({
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      // autoplay: true,
+      autoplaySpeed: 3000
+    });
+    $('#filter_group_prods span').click(function(){
+      var id = parseInt($(this).attr('data-cat'));
+      if(id > 0) $('#prods').slickFilter('[data-cat='+id+']');
+      else $('#prods').slickUnfilter();
+      $('#filter_group_prods span').removeClass('active');
+      $(this).addClass('active');
+    });
   });
   </script>        
-  
-  <?php /* if ($products) { ?>
-  <div id="tab-related" class="">
-    <div class="box-product">
-      <?php foreach ($products as $product) { ?>
-      <div>
-        <?php if ($product['thumb']) { ?>
-        <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
-        <?php } ?>
-        <div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
-        <?php if ($product['price']) { ?>
-        <div class="price">
-          <?php if (!$product['special']) { ?>
-          <?php echo $product['price']; ?>
-          <?php } else { ?>
-          <span class="price-old"><?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
-          <?php } ?>
-        </div>
-        <?php } ?>
-        <?php if ($product['rating']) { ?>
-        <div class="rating"><img src="catalog/view/theme/default/image/stars-<?php echo $product['rating']; ?>.png" alt="<?php echo $product['reviews']; ?>" /></div>
-        <?php } ?>
-        <a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button"><?php echo $button_cart; ?></a></div>
-      <?php } ?>
-    </div>
-  </div>
-  <?php } */ ?>
+
 
   <div id="tabs" class="htabs"><?php if (!empty($description)) { ?><a href="#tab-description"><?php echo $tab_description; ?></a><?php } ?>
     <?php if ($attribute_groups) { ?>

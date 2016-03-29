@@ -115,11 +115,21 @@ class ControllerReportCustomerReward extends Controller {
 		if (isset($this->request->get['filter_date_end'])) {
 			$url .= '&filter_date_end=' . $this->request->get['filter_date_end'];
 		}
+
+		if (isset($this->request->get['limit'])) {
+			$limit = $this->request->get['limit'];
+		} else {
+			$limit = $this->config->get('config_admin_limit');
+		}
+
+		if (isset($this->request->get['limit'])) {
+			$url .= '&limit=' . $this->request->get['limit'];
+		}
 		
 		$pagination = new Pagination();
 		$pagination->total = $customer_total;
 		$pagination->page = $page;
-		$pagination->limit = $this->config->get('config_admin_limit');
+		$pagination->limit = $limit;
 		$pagination->text = $this->language->get('text_pagination');
 		$pagination->url = $this->url->link('report/customer_reward', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 			

@@ -87,7 +87,8 @@ $(document).ready(function(){
           </li>
           <li><a href="<?php echo $optionar; ?>"><?php echo $text_optionar; ?></a></li>
           <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li> 
-		<li><a href="<?php echo $suppler; ?>"><?php echo $text_suppler; ?></a></li> <!--*suppler*-->          <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
+		  <!--<li><a href="<?php //echo $suppler; ?>"><?php //echo $text_suppler; ?></a></li> --><!--*suppler*-->
+          <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
           <li><a href="<?php echo $review; ?>"><?php echo $text_review; ?></a></li>
           <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
           <li><a href="<?php echo $information_category; ?>"><?php echo $text_information_category; ?></a></li>

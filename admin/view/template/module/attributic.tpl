@@ -338,5 +338,6 @@ function loadCategory(template_id) {
 setInterval (function () {
     $('.success').fadeOut('slow');
 }, 3000);
+
 //--></script>
 <?php echo $footer; ?>

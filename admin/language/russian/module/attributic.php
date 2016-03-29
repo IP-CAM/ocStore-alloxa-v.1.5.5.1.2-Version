@@ -14,6 +14,7 @@ $_['attribute_group']                           = 'Группа атрибуто
 $_['text_select']                               = 'Добавить атрибуты по шаблону: ';
 $_['text_delete_all']                           = 'Удалить все атрибуты';
 $_['text_delete_empty']                         = 'Удалить пустые атрибуты';
+$_['text_create_templates']                     = 'Создать шаблон на основе';
 $_['attribute_value']                           = 'Значение атрибута';
 
 // Error

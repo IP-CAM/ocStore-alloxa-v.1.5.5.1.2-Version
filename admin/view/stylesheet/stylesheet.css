@@ -560,3 +560,8 @@ table.form > tbody > tr > td {
 	position: relative;
 	top: 3px;
 }
+.fixed{
+	position: fixed;
+	top: 10px;
+	right: 48px;
+}

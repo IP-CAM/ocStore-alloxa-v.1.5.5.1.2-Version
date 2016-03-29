@@ -10,4 +10,5 @@
 </div>
 <a id="delete_all_attributes" class="button" style="background: #003A88;border-radius: 3px;color: #FFFFFF;float: left;margin: 0 0 10px 10px;padding: 0 10px;height: 21px;line-height: 21px;"><?php echo $text_delete_all; ?></a>
 <a id="delete_empty_attributes" class="button" style="background: #003A88;border-radius: 3px;color: #FFFFFF;float: left;margin: 0 0 10px 10px;padding: 0 10px;height: 21px;line-height: 21px;"><?php echo $text_delete_empty; ?></a>
+<a id="create_templates" class="button" style="background: #003A88;border-radius: 3px;color: #FFFFFF;float: left;margin: 0 0 10px 10px;padding: 0 10px;height: 21px;line-height: 21px;"><?php echo $text_create_templates; ?></a>
 </div>
