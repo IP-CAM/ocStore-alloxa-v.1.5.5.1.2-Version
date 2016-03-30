@@ -398,16 +398,17 @@ class ModelModuleDeadcowSEO extends Model
         return isset($map[$bank][$langcode][$ord]) ? $map[$bank][$langcode][$ord] : $unknown;
     }
 
-    private function makeSlugs($string, $maxlen = 0, $noSpace = true, $source_langcode = null)
+    public function makeSlugs($string, $maxlen = 0, $noSpace = true, $source_langcode = null)
     {
         global $session;
         $newStringTab = array();
         $string = strtolower($this->_transliteration_process(trim(html_entity_decode($string, ENT_QUOTES, "UTF-8")), '-', $source_langcode));
-        if (function_exists('str_split')) {
-            $stringTab = str_split($string);
-        } else {
-            $stringTab = $this->my_str_split($string);
-        }
+//        if (function_exists('str_split')) {
+//            $stringTab = str_split($string);
+//        } else {
+//            $stringTab = $this->my_str_split($string);
+//        }
+        $stringTab = $this->my_str_split($string);
         $numbers = array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-");
         foreach ($stringTab as $letter) {
             if (in_array($letter, range("a", "z")) || in_array($letter, $numbers)) {

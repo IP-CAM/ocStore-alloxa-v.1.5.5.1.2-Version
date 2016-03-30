@@ -502,7 +502,12 @@ class ControllerCatalogProduct extends Controller {
 
     	$this->getList();
   	}
-	
+	public function getSeoKeyword(){
+		$this->load->model('module/deadcow_seo');
+		$this->data['keyword'] = $this->model_module_deadcow_seo->makeSlugs($this->request->post['seokeyword']);
+		echo $this->data['keyword'];
+		return false;
+	}
   	private function getList() {				
 		if (isset($this->request->get['filter_name'])) {
 			$filter_name = $this->request->get['filter_name'];
@@ -980,6 +985,9 @@ class ControllerCatalogProduct extends Controller {
 			$this->data['error_name'] = $this->error['name'];
 		} else {
 			$this->data['error_name'] = array();
+		}
+		if (isset($this->data['get_seo_keyword'])){
+			$this->getSeoKeyword($this->data['heading_title']);
 		}
 
  		if (isset($this->error['meta_description'])) {

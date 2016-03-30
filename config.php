@@ -9,22 +9,21 @@ define('HTTPS_SERVER', 'http://alloxa.local/');
 define('HTTP_IMAGE', 'http://alloxa.local/image/');
 
 // DIR
-define('DIR_APPLICATION', 'E:\work\git\alloxa/catalog/');
-define('DIR_SYSTEM', 'E:\work\git\alloxa/system/');
-define('DIR_DATABASE', 'E:\work\git\alloxa/system/database/');
-define('DIR_LANGUAGE', 'E:\work\git\alloxa/catalog/language/');
-define('DIR_TEMPLATE', 'E:\work\git\alloxa/catalog/view/theme/');
-define('DIR_CONFIG', 'E:\work\git\alloxa/system/config/');
-define('DIR_IMAGE', 'E:\work\git\alloxa/image/');
-define('DIR_CACHE', 'E:\work\git\alloxa/system/cache/');
-define('DIR_DOWNLOAD', 'E:\work\git\alloxa/download/');
-define('DIR_LOGS', 'E:\work\git\alloxa/system/logs/');
-
+define('DIR_APPLICATION', 'D:\OpenServer\domains\alloxa.local/catalog/');
+define('DIR_SYSTEM', 'D:\OpenServer\domains\alloxa.local/system/');
+define('DIR_DATABASE', 'D:\OpenServer\domains\alloxa.local/system/database/');
+define('DIR_LANGUAGE', 'D:\OpenServer\domains\alloxa.local/catalog/language/');
+define('DIR_TEMPLATE', 'D:\OpenServer\domains\alloxa.local/catalog/view/theme/');
+define('DIR_CONFIG', 'D:\OpenServer\domains\alloxa.local/system/config/');
+define('DIR_IMAGE', 'D:\OpenServer\domains\alloxa.local/image/');
+define('DIR_CACHE', 'D:\OpenServer\domains\alloxa.local/system/cache/');
+define('DIR_DOWNLOAD', 'D:\OpenServer\domains\alloxa.local/download/');
+define('DIR_LOGS', 'D:\OpenServer\domains\alloxa.local/system/logs/');
+//define('DIR_CATALOG', 'D:\OpenServer\domains\alloxa.local/catalog/');
 // DB
 define('DB_DRIVER', 'mysql');
-define('DB_HOSTNAME', '212.109.223.89');
-define('DB_USERNAME', 'project_alloxa');
-define('DB_PASSWORD', 'z38EDj3GcXrfrDbB');
-define('DB_DATABASE', 'project_alloxa');
+define('DB_HOSTNAME', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_DATABASE', 'alloxa');
 define('DB_PREFIX', 'oc_');
-?>
