@@ -1643,5 +1643,6 @@ $('#vtab-option a').tabs();
             });
         }
     });
+
     //--></script>
 <?php echo $footer; ?>

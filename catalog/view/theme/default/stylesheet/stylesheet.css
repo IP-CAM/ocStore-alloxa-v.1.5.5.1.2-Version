@@ -370,6 +370,7 @@ font-weight:700;
 }
 #menu > ul > li:hover {
 }
+#menu > ul > li:first-child {border-left:none}
 #menu > span {
 	display:inline-block;
 	width:100%; 
@@ -431,6 +432,8 @@ font-weight:700;
 	background: #FFFFFF;
 	position: absolute;
 	z-index: 5;
+	opacity: 0;
+	transition: opacity 1s ease-out 2s;
 	/*padding: 5px;*/
 	/*border: 1px solid #000000;
 	-webkit-border-radius: 0px 0px 5px 5px;
@@ -450,6 +453,8 @@ font-weight:700;
 }
 #menu > ul > li:hover > div {
 	display: table;
+	opacity: 1;
+
 }
 #menu > ul > li > div > ul {
 	display: table-cell;
