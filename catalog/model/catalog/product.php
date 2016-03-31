@@ -193,6 +193,12 @@ class ModelCatalogProduct extends Model {
 		if (!empty($data['filter_manufacturer_id'])) {
 			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
 		}
+
+		$status_set_date = new DateTime();
+		$status_set_date = $status_set_date->modify("-1 month")->format("Y-m-d");
+
+			$sql .= " AND (p.status_set_date > '" . $status_set_date . "'";
+			$sql .= " OR p.status_set_date = '0000-00-00')";
 		
 		$sql .= " GROUP BY p.product_id";
 		
