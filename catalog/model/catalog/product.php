@@ -37,6 +37,7 @@ class ModelCatalogProduct extends Model {
 				'seo_title'        => $query->row['seo_title'],
 				'seo_h1'           => $query->row['seo_h1'],
 				'product_id'       => $query->row['product_id'],
+				'category_id'      => $query->row['category_id'],
 				'name'             => $query->row['name'],
 				'description'      => $query->row['description'],
 				'meta_description' => $query->row['meta_description'],
@@ -486,7 +487,11 @@ class ModelCatalogProduct extends Model {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_related pr LEFT JOIN " . DB_PREFIX . "product p ON (pr.related_id = p.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE pr.product_id = '" . (int)$product_id . "' AND p.status = '1' AND p.date_available <= '" . $this->NOW . "' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'");
 		
 		foreach ($query->rows as $result) { 
-			if( $product_id != $result['related_id'] )$product_data[$result['related_id']] = $this->getProduct($result['related_id']);
+			if( $product_id != $result['related_id'] ){
+				$product_data[$result['related_id']] = $this->getProduct($result['related_id']);
+				$cat = $this->getCategories($result['related_id']);
+				$product_data[$result['related_id']]['category_id'] = $cat[0]['category_id'];
+			}
 		}
 		
 		return $product_data;

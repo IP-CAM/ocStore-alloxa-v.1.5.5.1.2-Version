@@ -50,7 +50,7 @@
 
 <script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
-<script src="catalog/view/javascript/slick.js"></script> 
+<script src="catalog/view/javascript/slick.min.js"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
 <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
 <?php if ($_SERVER['REQUEST_URI'] == '/credit' || $_SERVER['REQUEST_URI'] == '/checkout/') { ?>
